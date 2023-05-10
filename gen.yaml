@@ -1,20 +1,21 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 75da626340b780e90f695fde67b34e0b
+  docVersion: 1.0.0
+  speakeasyVersion: 1.30.0
+  generationVersion: 2.26.3
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
+  telemetryEnabled: false
   sdkClassName: airbyte-test
   singleTagPerOp: false
-  tagNamespacingDisabled: false
-  telemetryEnabled: false
 java:
-  version: 0.0.1
+  version: 1.0.0
   artifactID: airbyte-test
   companyEmail: info@mycompany.com
   companyName: My Company
   companyURL: www.mycompany.com
   githubURL: github.com/owner/repo
   groupID: WayScript
+  maxMethodParams: 0
   ossrhURL: https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/
   projectName: airbyte-test
