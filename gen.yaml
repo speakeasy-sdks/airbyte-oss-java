@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: 75da626340b780e90f695fde67b34e0b
   docVersion: 1.0.0
-  speakeasyVersion: 1.32.0
-  generationVersion: 2.28.0
+  speakeasyVersion: 1.33.2
+  generationVersion: 2.29.0
 generation:
   sdkClassName: airbyte-test
   singleTagPerOp: false
   telemetryEnabled: false
 java:
-  version: 1.2.0
+  version: 1.3.0
   artifactID: airbyte-test
   companyEmail: info@mycompany.com
   companyName: My Company
