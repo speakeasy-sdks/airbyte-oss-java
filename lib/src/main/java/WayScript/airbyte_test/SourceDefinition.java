@@ -50,6 +50,7 @@ public class SourceDefinition {
         SerializedBody serializedRequestBody = WayScript.airbyte_test.utils.Utils.serializeRequestBody(request, "request", "json");
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -99,6 +100,7 @@ public class SourceDefinition {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -150,6 +152,7 @@ public class SourceDefinition {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -207,6 +210,7 @@ public class SourceDefinition {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -264,6 +268,7 @@ public class SourceDefinition {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -316,6 +321,7 @@ public class SourceDefinition {
         req.setMethod("POST");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -354,6 +360,7 @@ public class SourceDefinition {
         SerializedBody serializedRequestBody = WayScript.airbyte_test.utils.Utils.serializeRequestBody(request, "request", "json");
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -389,6 +396,7 @@ public class SourceDefinition {
         req.setMethod("POST");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -427,6 +435,7 @@ public class SourceDefinition {
         SerializedBody serializedRequestBody = WayScript.airbyte_test.utils.Utils.serializeRequestBody(request, "request", "json");
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -468,6 +477,7 @@ public class SourceDefinition {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -516,6 +526,7 @@ public class SourceDefinition {
         SerializedBody serializedRequestBody = WayScript.airbyte_test.utils.Utils.serializeRequestBody(request, "request", "json");
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);

@@ -49,6 +49,7 @@ public class Notifications {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
