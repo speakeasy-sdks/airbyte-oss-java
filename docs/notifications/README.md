@@ -16,7 +16,7 @@ package hello.world;
 import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.TryNotificationConfigResponse;
 import WayScript.airbyte_test.models.shared.Notification;
-import WayScript.airbyte_test.models.shared.NotificationTypeEnum;
+import WayScript.airbyte_test.models.shared.NotificationType;
 import WayScript.airbyte_test.models.shared.SlackNotificationConfiguration;
 
 public class Application {
@@ -25,7 +25,7 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.Notification req = new Notification(NotificationTypeEnum.SLACK, false, false) {{
+            WayScript.airbyte_test.models.shared.Notification req = new Notification(NotificationType.SLACK, false, false) {{
                 customerioConfiguration = new java.util.HashMap<String, Object>() {{
                     put("dignissimos", "minus");
                     put("distinctio", "possimus");

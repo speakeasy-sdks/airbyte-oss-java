@@ -27,9 +27,9 @@ package hello.world;
 
 import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.CreateWorkspaceResponse;
-import WayScript.airbyte_test.models.shared.GeographyEnum;
+import WayScript.airbyte_test.models.shared.Geography;
 import WayScript.airbyte_test.models.shared.Notification;
-import WayScript.airbyte_test.models.shared.NotificationTypeEnum;
+import WayScript.airbyte_test.models.shared.NotificationType;
 import WayScript.airbyte_test.models.shared.SlackNotificationConfiguration;
 import WayScript.airbyte_test.models.shared.WebhookConfigWrite;
 import WayScript.airbyte_test.models.shared.WorkspaceCreate;
@@ -42,28 +42,28 @@ public class Application {
 
             WayScript.airbyte_test.models.shared.WorkspaceCreate req = new WorkspaceCreate("ut") {{
                 anonymousDataCollection = false;
-                defaultGeography = GeographyEnum.EU;
+                defaultGeography = Geography.EU;
                 displaySetupWizard = false;
                 email = "Valentine.Turcotte34@hotmail.com";
                 news = false;
                 notifications = new WayScript.airbyte_test.models.shared.Notification[]{{
-                    add(new Notification(NotificationTypeEnum.SLACK, false, false) {{
+                    add(new Notification(NotificationType.SLACK, false, false) {{
                         customerioConfiguration = new java.util.HashMap<String, Object>() {{
                             put("recusandae", "a");
                         }};
-                        notificationType = NotificationTypeEnum.SLACK;
+                        notificationType = NotificationType.SLACK;
                         sendOnFailure = false;
                         sendOnSuccess = false;
                         slackConfiguration = new SlackNotificationConfiguration("mollitia") {{
                             webhook = "neque";
                         }};
                     }}),
-                    add(new Notification(NotificationTypeEnum.CUSTOMERIO, false, false) {{
+                    add(new Notification(NotificationType.CUSTOMERIO, false, false) {{
                         customerioConfiguration = new java.util.HashMap<String, Object>() {{
                             put("est", "quasi");
                             put("rerum", "blanditiis");
                         }};
-                        notificationType = NotificationTypeEnum.CUSTOMERIO;
+                        notificationType = NotificationType.CUSTOMERIO;
                         sendOnFailure = false;
                         sendOnSuccess = false;
                         slackConfiguration = new SlackNotificationConfiguration("perspiciatis") {{
@@ -271,9 +271,9 @@ package hello.world;
 
 import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.UpdateWorkspaceResponse;
-import WayScript.airbyte_test.models.shared.GeographyEnum;
+import WayScript.airbyte_test.models.shared.Geography;
 import WayScript.airbyte_test.models.shared.Notification;
-import WayScript.airbyte_test.models.shared.NotificationTypeEnum;
+import WayScript.airbyte_test.models.shared.NotificationType;
 import WayScript.airbyte_test.models.shared.SlackNotificationConfiguration;
 import WayScript.airbyte_test.models.shared.WebhookConfigWrite;
 import WayScript.airbyte_test.models.shared.WorkspaceUpdate;
@@ -286,44 +286,44 @@ public class Application {
 
             WayScript.airbyte_test.models.shared.WorkspaceUpdate req = new WorkspaceUpdate("5d03084f-bba5-4cce-bf5c-b01fe51e528a") {{
                 anonymousDataCollection = false;
-                defaultGeography = GeographyEnum.AUTO;
+                defaultGeography = Geography.AUTO;
                 displaySetupWizard = false;
                 email = "Lysanne.Schimmel@gmail.com";
                 initialSetupComplete = false;
                 news = false;
                 notifications = new WayScript.airbyte_test.models.shared.Notification[]{{
-                    add(new Notification(NotificationTypeEnum.CUSTOMERIO, false, false) {{
+                    add(new Notification(NotificationType.CUSTOMERIO, false, false) {{
                         customerioConfiguration = new java.util.HashMap<String, Object>() {{
                             put("ullam", "maiores");
                             put("corrupti", "libero");
                             put("placeat", "explicabo");
                         }};
-                        notificationType = NotificationTypeEnum.CUSTOMERIO;
+                        notificationType = NotificationType.CUSTOMERIO;
                         sendOnFailure = false;
                         sendOnSuccess = false;
                         slackConfiguration = new SlackNotificationConfiguration("expedita") {{
                             webhook = "animi";
                         }};
                     }}),
-                    add(new Notification(NotificationTypeEnum.CUSTOMERIO, false, false) {{
+                    add(new Notification(NotificationType.CUSTOMERIO, false, false) {{
                         customerioConfiguration = new java.util.HashMap<String, Object>() {{
                             put("assumenda", "laborum");
                             put("magnam", "veritatis");
                             put("fugit", "nihil");
                         }};
-                        notificationType = NotificationTypeEnum.CUSTOMERIO;
+                        notificationType = NotificationType.CUSTOMERIO;
                         sendOnFailure = false;
                         sendOnSuccess = false;
                         slackConfiguration = new SlackNotificationConfiguration("nemo") {{
                             webhook = "nulla";
                         }};
                     }}),
-                    add(new Notification(NotificationTypeEnum.CUSTOMERIO, false, false) {{
+                    add(new Notification(NotificationType.CUSTOMERIO, false, false) {{
                         customerioConfiguration = new java.util.HashMap<String, Object>() {{
                             put("hic", "sapiente");
                             put("eius", "esse");
                         }};
-                        notificationType = NotificationTypeEnum.SLACK;
+                        notificationType = NotificationType.SLACK;
                         sendOnFailure = false;
                         sendOnSuccess = false;
                         slackConfiguration = new SlackNotificationConfiguration("similique") {{

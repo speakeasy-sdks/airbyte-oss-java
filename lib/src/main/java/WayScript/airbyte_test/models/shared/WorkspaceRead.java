@@ -31,9 +31,9 @@ public class WorkspaceRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("defaultGeography")
-    public GeographyEnum defaultGeography;
+    public Geography defaultGeography;
 
-    public WorkspaceRead withDefaultGeography(GeographyEnum defaultGeography) {
+    public WorkspaceRead withDefaultGeography(Geography defaultGeography) {
         this.defaultGeography = defaultGeography;
         return this;
     }

@@ -85,9 +85,9 @@ public class AirbyteStream {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("supportedSyncModes")
-    public SyncModeEnum[] supportedSyncModes;
+    public SyncMode[] supportedSyncModes;
 
-    public AirbyteStream withSupportedSyncModes(SyncModeEnum[] supportedSyncModes) {
+    public AirbyteStream withSupportedSyncModes(SyncMode[] supportedSyncModes) {
         this.supportedSyncModes = supportedSyncModes;
         return this;
     }

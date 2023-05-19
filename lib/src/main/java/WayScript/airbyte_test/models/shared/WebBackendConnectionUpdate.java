@@ -22,9 +22,9 @@ public class WebBackendConnectionUpdate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("geography")
-    public GeographyEnum geography;
+    public Geography geography;
 
-    public WebBackendConnectionUpdate withGeography(GeographyEnum geography) {
+    public WebBackendConnectionUpdate withGeography(Geography geography) {
         this.geography = geography;
         return this;
     }
@@ -46,9 +46,9 @@ public class WebBackendConnectionUpdate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("namespaceDefinition")
-    public NamespaceDefinitionTypeEnum namespaceDefinition;
+    public NamespaceDefinitionType namespaceDefinition;
 
-    public WebBackendConnectionUpdate withNamespaceDefinition(NamespaceDefinitionTypeEnum namespaceDefinition) {
+    public WebBackendConnectionUpdate withNamespaceDefinition(NamespaceDefinitionType namespaceDefinition) {
         this.namespaceDefinition = namespaceDefinition;
         return this;
     }
@@ -67,9 +67,9 @@ public class WebBackendConnectionUpdate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("nonBreakingChangesPreference")
-    public NonBreakingChangesPreferenceEnum nonBreakingChangesPreference;
+    public NonBreakingChangesPreference nonBreakingChangesPreference;
 
-    public WebBackendConnectionUpdate withNonBreakingChangesPreference(NonBreakingChangesPreferenceEnum nonBreakingChangesPreference) {
+    public WebBackendConnectionUpdate withNonBreakingChangesPreference(NonBreakingChangesPreference nonBreakingChangesPreference) {
         this.nonBreakingChangesPreference = nonBreakingChangesPreference;
         return this;
     }
@@ -145,9 +145,9 @@ public class WebBackendConnectionUpdate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public WebBackendConnectionUpdate withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public WebBackendConnectionUpdate withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
@@ -175,9 +175,9 @@ public class WebBackendConnectionUpdate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public WebBackendConnectionUpdate withStatus(ConnectionStatusEnum status) {
+    public WebBackendConnectionUpdate withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }

@@ -22,14 +22,14 @@ public class NotificationRead {
     }
     
     @JsonProperty("status")
-    public NotificationReadStatusEnum status;
+    public NotificationReadStatus status;
 
-    public NotificationRead withStatus(NotificationReadStatusEnum status) {
+    public NotificationRead withStatus(NotificationReadStatus status) {
         this.status = status;
         return this;
     }
     
-    public NotificationRead(@JsonProperty("status") NotificationReadStatusEnum status) {
+    public NotificationRead(@JsonProperty("status") NotificationReadStatus status) {
         this.status = status;
   }
 }

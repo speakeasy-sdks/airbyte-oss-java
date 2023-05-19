@@ -35,18 +35,18 @@ import WayScript.airbyte_test.models.shared.ConnectionCreate;
 import WayScript.airbyte_test.models.shared.ConnectionSchedule;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleData;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicSchedule;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnitEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnit;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataCron;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnitEnum;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTypeEnum;
-import WayScript.airbyte_test.models.shared.ConnectionStatusEnum;
-import WayScript.airbyte_test.models.shared.DestinationSyncModeEnum;
-import WayScript.airbyte_test.models.shared.GeographyEnum;
-import WayScript.airbyte_test.models.shared.NamespaceDefinitionTypeEnum;
-import WayScript.airbyte_test.models.shared.NonBreakingChangesPreferenceEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnit;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleType;
+import WayScript.airbyte_test.models.shared.ConnectionStatus;
+import WayScript.airbyte_test.models.shared.DestinationSyncMode;
+import WayScript.airbyte_test.models.shared.Geography;
+import WayScript.airbyte_test.models.shared.NamespaceDefinitionType;
+import WayScript.airbyte_test.models.shared.NonBreakingChangesPreference;
 import WayScript.airbyte_test.models.shared.ResourceRequirements;
 import WayScript.airbyte_test.models.shared.SelectedFieldInfo;
-import WayScript.airbyte_test.models.shared.SyncModeEnum;
+import WayScript.airbyte_test.models.shared.SyncMode;
 
 public class Application {
     public static void main(String[] args) {
@@ -54,12 +54,12 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.ConnectionCreate req = new ConnectionCreate("f3a66997-074b-4a44-a9b6-e2141959890a", "fa563e25-16fe-44c8-b711-e5b7fd2ed028", ConnectionStatusEnum.INACTIVE) {{
-                geography = GeographyEnum.AUTO;
+            WayScript.airbyte_test.models.shared.ConnectionCreate req = new ConnectionCreate("f3a66997-074b-4a44-a9b6-e2141959890a", "fa563e25-16fe-44c8-b711-e5b7fd2ed028", ConnectionStatus.INACTIVE) {{
+                geography = Geography.AUTO;
                 name = "Angelica Stanton";
-                namespaceDefinition = NamespaceDefinitionTypeEnum.DESTINATION;
+                namespaceDefinition = NamespaceDefinitionType.DESTINATION;
                 namespaceFormat = "${SOURCE_NAMESPACE}";
-                nonBreakingChangesPreference = NonBreakingChangesPreferenceEnum.DISABLE;
+                nonBreakingChangesPreference = NonBreakingChangesPreference.DISABLE;
                 notifySchemaChanges = false;
                 operationIds = new String[]{{
                     add("601fb576-b0d5-4f0d-b0c5-fbb258705320"),
@@ -71,21 +71,21 @@ public class Application {
                     memoryLimit = "dolor";
                     memoryRequest = "vero";
                 }};;
-                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnitEnum.HOURS, 944120L);;
+                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnit.HOURS, 944120L);;
                 scheduleData = new ConnectionScheduleData() {{
-                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnitEnum.MONTHS, 608253L);;
+                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnit.MONTHS, 608253L);;
                     cron = new ConnectionScheduleDataCron("facilis", "perspiciatis");;
                 }};;
-                scheduleType = ConnectionScheduleTypeEnum.MANUAL;
+                scheduleType = ConnectionScheduleType.MANUAL;
                 sourceCatalogId = "c28909b3-fe49-4a8d-9cbf-48633323f9b7";
                 syncCatalog = new AirbyteCatalog(                new WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration[]{{
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.FULL_REFRESH) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.FULL_REFRESH) {{
                                             aliasName = "reiciendis";
                                             cursorField = new String[]{{
                                                 add("dolorum"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.APPEND;
+                                            destinationSyncMode = DestinationSyncMode.APPEND;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -109,7 +109,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.FULL_REFRESH;
+                                            syncMode = SyncMode.FULL_REFRESH;
                                         }};
                                         stream = new AirbyteStream("tempora") {{
                                             defaultCursorField = new String[]{{
@@ -145,15 +145,15 @@ public class Application {
                                                     add("totam"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.FULL_REFRESH),
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.FULL_REFRESH),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.FULL_REFRESH),
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.FULL_REFRESH),
                                             }};
                                         }};
                                     }}),
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.FULL_REFRESH) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.FULL_REFRESH) {{
                                             aliasName = "vel";
                                             cursorField = new String[]{{
                                                 add("officiis"),
@@ -161,7 +161,7 @@ public class Application {
                                                 add("dolorum"),
                                                 add("a"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.OVERWRITE;
+                                            destinationSyncMode = DestinationSyncMode.OVERWRITE;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -200,7 +200,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.INCREMENTAL;
+                                            syncMode = SyncMode.INCREMENTAL;
                                         }};
                                         stream = new AirbyteStream("sunt") {{
                                             defaultCursorField = new String[]{{
@@ -221,8 +221,8 @@ public class Application {
                                                     add("fugit"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.FULL_REFRESH),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.FULL_REFRESH),
                                             }};
                                         }};
                                     }}),
@@ -420,14 +420,14 @@ import WayScript.airbyte_test.models.operations.SearchConnectionsResponse;
 import WayScript.airbyte_test.models.shared.ConnectionSchedule;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleData;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicSchedule;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnitEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnit;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataCron;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnitEnum;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTypeEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnit;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleType;
 import WayScript.airbyte_test.models.shared.ConnectionSearch;
-import WayScript.airbyte_test.models.shared.ConnectionStatusEnum;
+import WayScript.airbyte_test.models.shared.ConnectionStatus;
 import WayScript.airbyte_test.models.shared.DestinationSearch;
-import WayScript.airbyte_test.models.shared.NamespaceDefinitionTypeEnum;
+import WayScript.airbyte_test.models.shared.NamespaceDefinitionType;
 import WayScript.airbyte_test.models.shared.SourceSearch;
 
 public class Application {
@@ -448,15 +448,15 @@ public class Application {
                 }};;
                 destinationId = "db04f157-5608-42d6-8ea1-9f1d17051339";
                 name = "Ms. Kenneth Ledner";
-                namespaceDefinition = NamespaceDefinitionTypeEnum.DESTINATION;
+                namespaceDefinition = NamespaceDefinitionType.DESTINATION;
                 namespaceFormat = "${SOURCE_NAMESPACE}";
                 prefix = "ab";
-                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnitEnum.DAYS, 251941L);;
+                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnit.DAYS, 251941L);;
                 scheduleData = new ConnectionScheduleData() {{
-                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnitEnum.MINUTES, 221161L);;
+                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnit.MINUTES, 221161L);;
                     cron = new ConnectionScheduleDataCron("occaecati", "numquam");;
                 }};;
-                scheduleType = ConnectionScheduleTypeEnum.CRON;
+                scheduleType = ConnectionScheduleType.CRON;
                 source = new SourceSearch() {{
                     connectionConfiguration = "explicabo";
                     name = "Dr. Maria Kulas";
@@ -466,7 +466,7 @@ public class Application {
                     workspaceId = "f33317fe-35b6-40eb-9ea4-26555ba3c287";
                 }};;
                 sourceId = "44ed53b8-8f3a-48d8-b5c0-b2f2fb7b194a";
-                status = ConnectionStatusEnum.ACTIVE;
+                status = ConnectionStatus.ACTIVE;
             }};            
 
             SearchConnectionsResponse res = sdk.connection.searchConnections(req);
@@ -536,19 +536,19 @@ import WayScript.airbyte_test.models.shared.AirbyteStreamConfiguration;
 import WayScript.airbyte_test.models.shared.ConnectionSchedule;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleData;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicSchedule;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnitEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnit;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataCron;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnitEnum;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTypeEnum;
-import WayScript.airbyte_test.models.shared.ConnectionStatusEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnit;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleType;
+import WayScript.airbyte_test.models.shared.ConnectionStatus;
 import WayScript.airbyte_test.models.shared.ConnectionUpdate;
-import WayScript.airbyte_test.models.shared.DestinationSyncModeEnum;
-import WayScript.airbyte_test.models.shared.GeographyEnum;
-import WayScript.airbyte_test.models.shared.NamespaceDefinitionTypeEnum;
-import WayScript.airbyte_test.models.shared.NonBreakingChangesPreferenceEnum;
+import WayScript.airbyte_test.models.shared.DestinationSyncMode;
+import WayScript.airbyte_test.models.shared.Geography;
+import WayScript.airbyte_test.models.shared.NamespaceDefinitionType;
+import WayScript.airbyte_test.models.shared.NonBreakingChangesPreference;
 import WayScript.airbyte_test.models.shared.ResourceRequirements;
 import WayScript.airbyte_test.models.shared.SelectedFieldInfo;
-import WayScript.airbyte_test.models.shared.SyncModeEnum;
+import WayScript.airbyte_test.models.shared.SyncMode;
 
 public class Application {
     public static void main(String[] args) {
@@ -558,11 +558,11 @@ public class Application {
 
             WayScript.airbyte_test.models.shared.ConnectionUpdate req = new ConnectionUpdate("3e8b445e-80ca-455e-bd20-e457e1858b6a") {{
                 breakingChange = false;
-                geography = GeographyEnum.US;
+                geography = Geography.US;
                 name = "Irvin Rath";
-                namespaceDefinition = NamespaceDefinitionTypeEnum.CUSTOMFORMAT;
+                namespaceDefinition = NamespaceDefinitionType.CUSTOMFORMAT;
                 namespaceFormat = "${SOURCE_NAMESPACE}";
-                nonBreakingChangesPreference = NonBreakingChangesPreferenceEnum.IGNORE;
+                nonBreakingChangesPreference = NonBreakingChangesPreference.IGNORE;
                 notifySchemaChanges = false;
                 operationIds = new String[]{{
                     add("a8e4824d-0ab4-4075-888e-51862065e904"),
@@ -576,24 +576,24 @@ public class Application {
                     memoryLimit = "atque";
                     memoryRequest = "sunt";
                 }};;
-                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnitEnum.MONTHS, 680697L);;
+                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnit.MONTHS, 680697L);;
                 scheduleData = new ConnectionScheduleData() {{
-                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnitEnum.MONTHS, 287119L);;
+                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnit.MONTHS, 287119L);;
                     cron = new ConnectionScheduleDataCron("reiciendis", "doloremque");;
                 }};;
-                scheduleType = ConnectionScheduleTypeEnum.CRON;
+                scheduleType = ConnectionScheduleType.CRON;
                 sourceCatalogId = "1012563f-94e2-49e9-b3e9-22a57a15be3e";
-                status = ConnectionStatusEnum.ACTIVE;
+                status = ConnectionStatus.ACTIVE;
                 syncCatalog = new AirbyteCatalog(                new WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration[]{{
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.FULL_REFRESH) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.FULL_REFRESH) {{
                                             aliasName = "ipsa";
                                             cursorField = new String[]{{
                                                 add("quae"),
                                                 add("molestiae"),
                                                 add("eveniet"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.APPEND;
+                                            destinationSyncMode = DestinationSyncMode.APPEND;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -620,7 +620,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.INCREMENTAL;
+                                            syncMode = SyncMode.INCREMENTAL;
                                         }};
                                         stream = new AirbyteStream("eum") {{
                                             defaultCursorField = new String[]{{
@@ -644,21 +644,21 @@ public class Application {
                                                     add("recusandae"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.FULL_REFRESH),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.FULL_REFRESH),
                                             }};
                                         }};
                                     }}),
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.FULL_REFRESH) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.FULL_REFRESH) {{
                                             aliasName = "reiciendis";
                                             cursorField = new String[]{{
                                                 add("aspernatur"),
                                                 add("ullam"),
                                                 add("quasi"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.OVERWRITE;
+                                            destinationSyncMode = DestinationSyncMode.OVERWRITE;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -703,7 +703,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.FULL_REFRESH;
+                                            syncMode = SyncMode.FULL_REFRESH;
                                         }};
                                         stream = new AirbyteStream("hic") {{
                                             defaultCursorField = new String[]{{
@@ -723,10 +723,10 @@ public class Application {
                                                     add("beatae"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.INCREMENTAL),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.INCREMENTAL),
                                             }};
                                         }};
                                     }}),

@@ -15,7 +15,7 @@ package hello.world;
 
 import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.GetLogsResponse;
-import WayScript.airbyte_test.models.shared.LogTypeEnum;
+import WayScript.airbyte_test.models.shared.LogType;
 import WayScript.airbyte_test.models.shared.LogsRequestBody;
 
 public class Application {
@@ -24,7 +24,7 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.LogsRequestBody req = new LogsRequestBody(LogTypeEnum.SCHEDULER);            
+            WayScript.airbyte_test.models.shared.LogsRequestBody req = new LogsRequestBody(LogType.SCHEDULER);            
 
             GetLogsResponse res = sdk.logs.getLogs(req);
 

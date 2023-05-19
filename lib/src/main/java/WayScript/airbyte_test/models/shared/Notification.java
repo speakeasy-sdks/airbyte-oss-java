@@ -19,9 +19,9 @@ public class Notification {
     }
     
     @JsonProperty("notificationType")
-    public NotificationTypeEnum notificationType;
+    public NotificationType notificationType;
 
-    public Notification withNotificationType(NotificationTypeEnum notificationType) {
+    public Notification withNotificationType(NotificationType notificationType) {
         this.notificationType = notificationType;
         return this;
     }
@@ -51,7 +51,7 @@ public class Notification {
         return this;
     }
     
-    public Notification(@JsonProperty("notificationType") NotificationTypeEnum notificationType, @JsonProperty("sendOnFailure") Boolean sendOnFailure, @JsonProperty("sendOnSuccess") Boolean sendOnSuccess) {
+    public Notification(@JsonProperty("notificationType") NotificationType notificationType, @JsonProperty("sendOnFailure") Boolean sendOnFailure, @JsonProperty("sendOnSuccess") Boolean sendOnSuccess) {
         this.notificationType = notificationType;
         this.sendOnFailure = sendOnFailure;
         this.sendOnSuccess = sendOnSuccess;

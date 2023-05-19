@@ -18,9 +18,9 @@ public class StreamTransform {
     }
     
     @JsonProperty("transformType")
-    public StreamTransformTransformTypeEnum transformType;
+    public StreamTransformTransformType transformType;
 
-    public StreamTransform withTransformType(StreamTransformTransformTypeEnum transformType) {
+    public StreamTransform withTransformType(StreamTransformTransformType transformType) {
         this.transformType = transformType;
         return this;
     }
@@ -37,7 +37,7 @@ public class StreamTransform {
         return this;
     }
     
-    public StreamTransform(@JsonProperty("streamDescriptor") StreamDescriptor streamDescriptor, @JsonProperty("transformType") StreamTransformTransformTypeEnum transformType) {
+    public StreamTransform(@JsonProperty("streamDescriptor") StreamDescriptor streamDescriptor, @JsonProperty("transformType") StreamTransformTransformType transformType) {
         this.streamDescriptor = streamDescriptor;
         this.transformType = transformType;
   }

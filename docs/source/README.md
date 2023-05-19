@@ -414,10 +414,10 @@ import WayScript.airbyte_test.models.shared.AirbyteCatalog;
 import WayScript.airbyte_test.models.shared.AirbyteStream;
 import WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration;
 import WayScript.airbyte_test.models.shared.AirbyteStreamConfiguration;
-import WayScript.airbyte_test.models.shared.DestinationSyncModeEnum;
+import WayScript.airbyte_test.models.shared.DestinationSyncMode;
 import WayScript.airbyte_test.models.shared.SelectedFieldInfo;
 import WayScript.airbyte_test.models.shared.SourceDiscoverSchemaWriteRequestBody;
-import WayScript.airbyte_test.models.shared.SyncModeEnum;
+import WayScript.airbyte_test.models.shared.SyncMode;
 
 public class Application {
     public static void main(String[] args) {
@@ -427,13 +427,13 @@ public class Application {
 
             WayScript.airbyte_test.models.shared.SourceDiscoverSchemaWriteRequestBody req = new SourceDiscoverSchemaWriteRequestBody(                new AirbyteCatalog(                new WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration[]{{
                                                 add(new AirbyteStreamAndConfiguration() {{
-                                                    config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.APPEND, SyncModeEnum.INCREMENTAL) {{
+                                                    config = new AirbyteStreamConfiguration(DestinationSyncMode.APPEND, SyncMode.INCREMENTAL) {{
                                                         aliasName = "consequuntur";
                                                         cursorField = new String[]{{
                                                             add("ratione"),
                                                             add("excepturi"),
                                                         }};
-                                                        destinationSyncMode = DestinationSyncModeEnum.OVERWRITE;
+                                                        destinationSyncMode = DestinationSyncMode.OVERWRITE;
                                                         fieldSelectionEnabled = false;
                                                         primaryKey = new String[][]{{
                                                             add(new String[]{{
@@ -478,7 +478,7 @@ public class Application {
                                                             }}),
                                                         }};
                                                         suggested = false;
-                                                        syncMode = SyncModeEnum.FULL_REFRESH;
+                                                        syncMode = SyncMode.FULL_REFRESH;
                                                     }};
                                                     stream = new AirbyteStream("dolor") {{
                                                         defaultCursorField = new String[]{{
@@ -511,19 +511,19 @@ public class Application {
                                                                 add("natus"),
                                                             }}),
                                                         }};
-                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.FULL_REFRESH),
+                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.FULL_REFRESH),
                                                         }};
                                                     }};
                                                 }}),
                                                 add(new AirbyteStreamAndConfiguration() {{
-                                                    config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.INCREMENTAL) {{
+                                                    config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.INCREMENTAL) {{
                                                         aliasName = "nostrum";
                                                         cursorField = new String[]{{
                                                             add("tenetur"),
                                                         }};
-                                                        destinationSyncMode = DestinationSyncModeEnum.OVERWRITE;
+                                                        destinationSyncMode = DestinationSyncMode.OVERWRITE;
                                                         fieldSelectionEnabled = false;
                                                         primaryKey = new String[][]{{
                                                             add(new String[]{{
@@ -554,7 +554,7 @@ public class Application {
                                                             }}),
                                                         }};
                                                         suggested = false;
-                                                        syncMode = SyncModeEnum.FULL_REFRESH;
+                                                        syncMode = SyncMode.FULL_REFRESH;
                                                     }};
                                                     stream = new AirbyteStream("est") {{
                                                         defaultCursorField = new String[]{{
@@ -577,9 +577,9 @@ public class Application {
                                                                 add("eligendi"),
                                                             }}),
                                                         }};
-                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.FULL_REFRESH),
+                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.FULL_REFRESH),
                                                         }};
                                                     }};
                                                 }}),

@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class AdvancedAuth {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("authFlowType")
-    public AdvancedAuthAuthFlowTypeEnum authFlowType;
+    public AdvancedAuthAuthFlowType authFlowType;
 
-    public AdvancedAuth withAuthFlowType(AdvancedAuthAuthFlowTypeEnum authFlowType) {
+    public AdvancedAuth withAuthFlowType(AdvancedAuthAuthFlowType authFlowType) {
         this.authFlowType = authFlowType;
         return this;
     }

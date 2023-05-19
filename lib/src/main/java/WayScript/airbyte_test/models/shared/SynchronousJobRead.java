@@ -22,9 +22,9 @@ public class SynchronousJobRead {
     }
     
     @JsonProperty("configType")
-    public JobConfigTypeEnum configType;
+    public JobConfigType configType;
 
-    public SynchronousJobRead withConfigType(JobConfigTypeEnum configType) {
+    public SynchronousJobRead withConfigType(JobConfigType configType) {
         this.configType = configType;
         return this;
     }
@@ -79,7 +79,7 @@ public class SynchronousJobRead {
         return this;
     }
     
-    public SynchronousJobRead(@JsonProperty("configType") JobConfigTypeEnum configType, @JsonProperty("createdAt") Long createdAt, @JsonProperty("endedAt") Long endedAt, @JsonProperty("id") String id, @JsonProperty("succeeded") Boolean succeeded) {
+    public SynchronousJobRead(@JsonProperty("configType") JobConfigType configType, @JsonProperty("createdAt") Long createdAt, @JsonProperty("endedAt") Long endedAt, @JsonProperty("id") String id, @JsonProperty("succeeded") Boolean succeeded) {
         this.configType = configType;
         this.createdAt = createdAt;
         this.endedAt = endedAt;

@@ -12,9 +12,9 @@ public class GetStateTypeResponse {
      * Successful operation
      */
     
-    public WayScript.airbyte_test.models.shared.ConnectionStateTypeEnum connectionStateType;
+    public WayScript.airbyte_test.models.shared.ConnectionStateType connectionStateType;
 
-    public GetStateTypeResponse withConnectionStateType(WayScript.airbyte_test.models.shared.ConnectionStateTypeEnum connectionStateType) {
+    public GetStateTypeResponse withConnectionStateType(WayScript.airbyte_test.models.shared.ConnectionStateType connectionStateType) {
         this.connectionStateType = connectionStateType;
         return this;
     }

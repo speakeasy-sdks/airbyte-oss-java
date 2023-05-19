@@ -59,9 +59,9 @@ public class SourceDiscoverSchemaRead {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("connectionStatus")
-    public ConnectionStatusEnum connectionStatus;
+    public ConnectionStatus connectionStatus;
 
-    public SourceDiscoverSchemaRead withConnectionStatus(ConnectionStatusEnum connectionStatus) {
+    public SourceDiscoverSchemaRead withConnectionStatus(ConnectionStatus connectionStatus) {
         this.connectionStatus = connectionStatus;
         return this;
     }

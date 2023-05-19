@@ -50,9 +50,9 @@ public class ConnectionSearch {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("namespaceDefinition")
-    public NamespaceDefinitionTypeEnum namespaceDefinition;
+    public NamespaceDefinitionType namespaceDefinition;
 
-    public ConnectionSearch withNamespaceDefinition(NamespaceDefinitionTypeEnum namespaceDefinition) {
+    public ConnectionSearch withNamespaceDefinition(NamespaceDefinitionType namespaceDefinition) {
         this.namespaceDefinition = namespaceDefinition;
         return this;
     }
@@ -110,9 +110,9 @@ public class ConnectionSearch {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public ConnectionSearch withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public ConnectionSearch withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
@@ -140,9 +140,9 @@ public class ConnectionSearch {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public ConnectionSearch withStatus(ConnectionStatusEnum status) {
+    public ConnectionSearch withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }

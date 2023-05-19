@@ -23,9 +23,9 @@ public class AttemptFailureReason {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("failureOrigin")
-    public AttemptFailureOriginEnum failureOrigin;
+    public AttemptFailureOrigin failureOrigin;
 
-    public AttemptFailureReason withFailureOrigin(AttemptFailureOriginEnum failureOrigin) {
+    public AttemptFailureReason withFailureOrigin(AttemptFailureOrigin failureOrigin) {
         this.failureOrigin = failureOrigin;
         return this;
     }
@@ -35,9 +35,9 @@ public class AttemptFailureReason {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("failureType")
-    public AttemptFailureTypeEnum failureType;
+    public AttemptFailureType failureType;
 
-    public AttemptFailureReason withFailureType(AttemptFailureTypeEnum failureType) {
+    public AttemptFailureReason withFailureType(AttemptFailureType failureType) {
         this.failureType = failureType;
         return this;
     }

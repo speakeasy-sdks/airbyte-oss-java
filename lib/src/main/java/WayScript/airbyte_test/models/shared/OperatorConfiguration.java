@@ -28,9 +28,9 @@ public class OperatorConfiguration {
     }
     
     @JsonProperty("operatorType")
-    public OperatorTypeEnum operatorType;
+    public OperatorType operatorType;
 
-    public OperatorConfiguration withOperatorType(OperatorTypeEnum operatorType) {
+    public OperatorConfiguration withOperatorType(OperatorType operatorType) {
         this.operatorType = operatorType;
         return this;
     }
@@ -44,7 +44,7 @@ public class OperatorConfiguration {
         return this;
     }
     
-    public OperatorConfiguration(@JsonProperty("operatorType") OperatorTypeEnum operatorType) {
+    public OperatorConfiguration(@JsonProperty("operatorType") OperatorType operatorType) {
         this.operatorType = operatorType;
   }
 }

@@ -18,9 +18,9 @@ public class JobRead {
     }
     
     @JsonProperty("configType")
-    public JobConfigTypeEnum configType;
+    public JobConfigType configType;
 
-    public JobRead withConfigType(JobConfigTypeEnum configType) {
+    public JobRead withConfigType(JobConfigType configType) {
         this.configType = configType;
         return this;
     }
@@ -63,9 +63,9 @@ public class JobRead {
     }
     
     @JsonProperty("status")
-    public JobStatusEnum status;
+    public JobStatus status;
 
-    public JobRead withStatus(JobStatusEnum status) {
+    public JobRead withStatus(JobStatus status) {
         this.status = status;
         return this;
     }
@@ -78,7 +78,7 @@ public class JobRead {
         return this;
     }
     
-    public JobRead(@JsonProperty("configId") String configId, @JsonProperty("configType") JobConfigTypeEnum configType, @JsonProperty("createdAt") Long createdAt, @JsonProperty("id") Long id, @JsonProperty("status") JobStatusEnum status, @JsonProperty("updatedAt") Long updatedAt) {
+    public JobRead(@JsonProperty("configId") String configId, @JsonProperty("configType") JobConfigType configType, @JsonProperty("createdAt") Long createdAt, @JsonProperty("id") Long id, @JsonProperty("status") JobStatus status, @JsonProperty("updatedAt") Long updatedAt) {
         this.configId = configId;
         this.configType = configType;
         this.createdAt = createdAt;

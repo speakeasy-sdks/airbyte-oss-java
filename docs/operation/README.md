@@ -23,11 +23,11 @@ import WayScript.airbyte_test.models.operations.CheckOperationResponse;
 import WayScript.airbyte_test.models.shared.OperatorConfiguration;
 import WayScript.airbyte_test.models.shared.OperatorDbt;
 import WayScript.airbyte_test.models.shared.OperatorNormalization;
-import WayScript.airbyte_test.models.shared.OperatorNormalizationOptionEnum;
-import WayScript.airbyte_test.models.shared.OperatorTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorNormalizationOption;
+import WayScript.airbyte_test.models.shared.OperatorType;
 import WayScript.airbyte_test.models.shared.OperatorWebhook;
 import WayScript.airbyte_test.models.shared.OperatorWebhookDbtCloud;
-import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookType;
 
 public class Application {
     public static void main(String[] args) {
@@ -35,21 +35,21 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.OperatorConfiguration req = new OperatorConfiguration(OperatorTypeEnum.DBT) {{
+            WayScript.airbyte_test.models.shared.OperatorConfiguration req = new OperatorConfiguration(OperatorType.DBT) {{
                 dbt = new OperatorDbt("quaerat") {{
                     dbtArguments = "ipsum";
                     dockerImage = "ducimus";
                     gitRepoBranch = "laudantium";
                 }};;
                 normalization = new OperatorNormalization() {{
-                    option = OperatorNormalizationOptionEnum.BASIC;
+                    option = OperatorNormalizationOption.BASIC;
                 }};;
                 webhook = new OperatorWebhook() {{
                     dbtCloud = new OperatorWebhookDbtCloud(701786L, 643997L);;
                     executionBody = "odit";
                     executionUrl = "ad";
                     webhookConfigId = "317747dc-915a-4d2c-af5d-d6723dc0f5ae";
-                    webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                    webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                 }};;
             }};            
 
@@ -80,11 +80,11 @@ import WayScript.airbyte_test.models.shared.OperationCreate;
 import WayScript.airbyte_test.models.shared.OperatorConfiguration;
 import WayScript.airbyte_test.models.shared.OperatorDbt;
 import WayScript.airbyte_test.models.shared.OperatorNormalization;
-import WayScript.airbyte_test.models.shared.OperatorNormalizationOptionEnum;
-import WayScript.airbyte_test.models.shared.OperatorTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorNormalizationOption;
+import WayScript.airbyte_test.models.shared.OperatorType;
 import WayScript.airbyte_test.models.shared.OperatorWebhook;
 import WayScript.airbyte_test.models.shared.OperatorWebhookDbtCloud;
-import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookType;
 
 public class Application {
     public static void main(String[] args) {
@@ -92,21 +92,21 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.OperationCreate req = new OperationCreate("aspernatur",                 new OperatorConfiguration(OperatorTypeEnum.WEBHOOK) {{
+            WayScript.airbyte_test.models.shared.OperationCreate req = new OperationCreate("aspernatur",                 new OperatorConfiguration(OperatorType.WEBHOOK) {{
                                 dbt = new OperatorDbt("neque") {{
                                     dbtArguments = "officia";
                                     dockerImage = "suscipit";
                                     gitRepoBranch = "harum";
                                 }};;
                                 normalization = new OperatorNormalization() {{
-                                    option = OperatorNormalizationOptionEnum.BASIC;
+                                    option = OperatorNormalizationOption.BASIC;
                                 }};;
                                 webhook = new OperatorWebhook() {{
                                     dbtCloud = new OperatorWebhookDbtCloud(496578L, 42454L);;
                                     executionBody = "perferendis";
                                     executionUrl = "laudantium";
                                     webhookConfigId = "78756143-f5a6-4c98-b555-54080d40bcac";
-                                    webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                    webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                                 }};;
                             }};, "c6cbd6b5-f3ec-4909-b04f-926bad255381");            
 
@@ -236,11 +236,11 @@ import WayScript.airbyte_test.models.shared.OperationUpdate;
 import WayScript.airbyte_test.models.shared.OperatorConfiguration;
 import WayScript.airbyte_test.models.shared.OperatorDbt;
 import WayScript.airbyte_test.models.shared.OperatorNormalization;
-import WayScript.airbyte_test.models.shared.OperatorNormalizationOptionEnum;
-import WayScript.airbyte_test.models.shared.OperatorTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorNormalizationOption;
+import WayScript.airbyte_test.models.shared.OperatorType;
 import WayScript.airbyte_test.models.shared.OperatorWebhook;
 import WayScript.airbyte_test.models.shared.OperatorWebhookDbtCloud;
-import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookType;
 
 public class Application {
     public static void main(String[] args) {
@@ -248,21 +248,21 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.OperationUpdate req = new OperationUpdate("commodi", "88f77c1f-fc71-4dca-963f-2a3c80a97ff3",                 new OperatorConfiguration(OperatorTypeEnum.NORMALIZATION) {{
+            WayScript.airbyte_test.models.shared.OperationUpdate req = new OperationUpdate("commodi", "88f77c1f-fc71-4dca-963f-2a3c80a97ff3",                 new OperatorConfiguration(OperatorType.NORMALIZATION) {{
                                 dbt = new OperatorDbt("non") {{
                                     dbtArguments = "optio";
                                     dockerImage = "illum";
                                     gitRepoBranch = "at";
                                 }};;
                                 normalization = new OperatorNormalization() {{
-                                    option = OperatorNormalizationOptionEnum.BASIC;
+                                    option = OperatorNormalizationOption.BASIC;
                                 }};;
                                 webhook = new OperatorWebhook() {{
                                     dbtCloud = new OperatorWebhookDbtCloud(945320L, 562066L);;
                                     executionBody = "ipsam";
                                     executionUrl = "esse";
                                     webhookConfigId = "a9e61876-c6ab-421d-a9df-c94d6fecd799";
-                                    webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                    webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                                 }};;
                             }};);            
 

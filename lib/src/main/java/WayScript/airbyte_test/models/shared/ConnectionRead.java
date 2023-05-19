@@ -38,9 +38,9 @@ public class ConnectionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("geography")
-    public GeographyEnum geography;
+    public Geography geography;
 
-    public ConnectionRead withGeography(GeographyEnum geography) {
+    public ConnectionRead withGeography(Geography geography) {
         this.geography = geography;
         return this;
     }
@@ -58,9 +58,9 @@ public class ConnectionRead {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("namespaceDefinition")
-    public NamespaceDefinitionTypeEnum namespaceDefinition;
+    public NamespaceDefinitionType namespaceDefinition;
 
-    public ConnectionRead withNamespaceDefinition(NamespaceDefinitionTypeEnum namespaceDefinition) {
+    public ConnectionRead withNamespaceDefinition(NamespaceDefinitionType namespaceDefinition) {
         this.namespaceDefinition = namespaceDefinition;
         return this;
     }
@@ -79,9 +79,9 @@ public class ConnectionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("nonBreakingChangesPreference")
-    public NonBreakingChangesPreferenceEnum nonBreakingChangesPreference;
+    public NonBreakingChangesPreference nonBreakingChangesPreference;
 
-    public ConnectionRead withNonBreakingChangesPreference(NonBreakingChangesPreferenceEnum nonBreakingChangesPreference) {
+    public ConnectionRead withNonBreakingChangesPreference(NonBreakingChangesPreference nonBreakingChangesPreference) {
         this.nonBreakingChangesPreference = nonBreakingChangesPreference;
         return this;
     }
@@ -157,9 +157,9 @@ public class ConnectionRead {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public ConnectionRead withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public ConnectionRead withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
@@ -185,9 +185,9 @@ public class ConnectionRead {
      * Active means that data is flowing through the connection. Inactive means it is not. Deprecated means the connection is off and cannot be re-activated. the schema field describes the elements of the schema that will be synced.
      */
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public ConnectionRead withStatus(ConnectionStatusEnum status) {
+    public ConnectionRead withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }
@@ -203,7 +203,7 @@ public class ConnectionRead {
         return this;
     }
     
-    public ConnectionRead(@JsonProperty("breakingChange") Boolean breakingChange, @JsonProperty("connectionId") String connectionId, @JsonProperty("destinationId") String destinationId, @JsonProperty("name") String name, @JsonProperty("sourceId") String sourceId, @JsonProperty("status") ConnectionStatusEnum status, @JsonProperty("syncCatalog") AirbyteCatalog syncCatalog) {
+    public ConnectionRead(@JsonProperty("breakingChange") Boolean breakingChange, @JsonProperty("connectionId") String connectionId, @JsonProperty("destinationId") String destinationId, @JsonProperty("name") String name, @JsonProperty("sourceId") String sourceId, @JsonProperty("status") ConnectionStatus status, @JsonProperty("syncCatalog") AirbyteCatalog syncCatalog) {
         this.breakingChange = breakingChange;
         this.connectionId = connectionId;
         this.destinationId = destinationId;

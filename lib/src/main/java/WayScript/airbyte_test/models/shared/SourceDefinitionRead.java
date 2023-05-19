@@ -83,9 +83,9 @@ public class SourceDefinitionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("releaseStage")
-    public ReleaseStageEnum releaseStage;
+    public ReleaseStage releaseStage;
 
-    public SourceDefinitionRead withReleaseStage(ReleaseStageEnum releaseStage) {
+    public SourceDefinitionRead withReleaseStage(ReleaseStage releaseStage) {
         this.releaseStage = releaseStage;
         return this;
     }
@@ -112,9 +112,9 @@ public class SourceDefinitionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("sourceType")
-    public SourceDefinitionReadSourceTypeEnum sourceType;
+    public SourceDefinitionReadSourceType sourceType;
 
-    public SourceDefinitionRead withSourceType(SourceDefinitionReadSourceTypeEnum sourceType) {
+    public SourceDefinitionRead withSourceType(SourceDefinitionReadSourceType sourceType) {
         this.sourceType = sourceType;
         return this;
     }

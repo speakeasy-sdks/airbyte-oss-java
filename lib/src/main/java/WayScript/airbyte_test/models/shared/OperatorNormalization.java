@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OperatorNormalization {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("option")
-    public OperatorNormalizationOptionEnum option;
+    public OperatorNormalizationOption option;
 
-    public OperatorNormalization withOption(OperatorNormalizationOptionEnum option) {
+    public OperatorNormalization withOption(OperatorNormalizationOption option) {
         this.option = option;
         return this;
     }

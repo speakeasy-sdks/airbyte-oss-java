@@ -56,9 +56,9 @@ public class OperatorWebhook {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("webhookType")
-    public OperatorWebhookWebhookTypeEnum webhookType;
+    public OperatorWebhookWebhookType webhookType;
 
-    public OperatorWebhook withWebhookType(OperatorWebhookWebhookTypeEnum webhookType) {
+    public OperatorWebhook withWebhookType(OperatorWebhookWebhookType webhookType) {
         this.webhookType = webhookType;
         return this;
     }

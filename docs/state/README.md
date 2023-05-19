@@ -22,7 +22,7 @@ import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.CreateOrUpdateStateResponse;
 import WayScript.airbyte_test.models.shared.ConnectionState;
 import WayScript.airbyte_test.models.shared.ConnectionStateCreateOrUpdate;
-import WayScript.airbyte_test.models.shared.ConnectionStateTypeEnum;
+import WayScript.airbyte_test.models.shared.ConnectionStateType;
 import WayScript.airbyte_test.models.shared.GlobalState;
 import WayScript.airbyte_test.models.shared.StreamDescriptor;
 import WayScript.airbyte_test.models.shared.StreamState;
@@ -33,7 +33,7 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.ConnectionStateCreateOrUpdate req = new ConnectionStateCreateOrUpdate("32a4da37-cbaa-4f44-92c4-842c9b2ad32d",                 new ConnectionState("afe81a88-f444-4457-bfec-d47353f63c82", ConnectionStateTypeEnum.GLOBAL) {{
+            WayScript.airbyte_test.models.shared.ConnectionStateCreateOrUpdate req = new ConnectionStateCreateOrUpdate("32a4da37-cbaa-4f44-92c4-842c9b2ad32d",                 new ConnectionState("afe81a88-f444-4457-bfec-d47353f63c82", ConnectionStateType.GLOBAL) {{
                                 globalState = new GlobalState(                new WayScript.airbyte_test.models.shared.StreamState[]{{
                                                     add(new StreamState(                new StreamDescriptor("repellendus") {{
                                                                         namespace = "culpa";

@@ -23,9 +23,9 @@ public class WorkspaceUpdate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("defaultGeography")
-    public GeographyEnum defaultGeography;
+    public Geography defaultGeography;
 
-    public WorkspaceUpdate withDefaultGeography(GeographyEnum defaultGeography) {
+    public WorkspaceUpdate withDefaultGeography(Geography defaultGeography) {
         this.defaultGeography = defaultGeography;
         return this;
     }

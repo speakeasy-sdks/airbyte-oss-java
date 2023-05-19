@@ -14,9 +14,9 @@ public class JobTypeResourceLimit {
      * enum that describes the different types of jobs that the platform runs.
      */
     @JsonProperty("jobType")
-    public JobTypeEnum jobType;
+    public JobType jobType;
 
-    public JobTypeResourceLimit withJobType(JobTypeEnum jobType) {
+    public JobTypeResourceLimit withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
     }
@@ -32,7 +32,7 @@ public class JobTypeResourceLimit {
         return this;
     }
     
-    public JobTypeResourceLimit(@JsonProperty("jobType") JobTypeEnum jobType, @JsonProperty("resourceRequirements") ResourceRequirements resourceRequirements) {
+    public JobTypeResourceLimit(@JsonProperty("jobType") JobType jobType, @JsonProperty("resourceRequirements") ResourceRequirements resourceRequirements) {
         this.jobType = jobType;
         this.resourceRequirements = resourceRequirements;
   }

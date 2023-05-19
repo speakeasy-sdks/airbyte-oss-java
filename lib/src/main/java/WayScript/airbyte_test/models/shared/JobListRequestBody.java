@@ -18,9 +18,9 @@ public class JobListRequestBody {
     }
     
     @JsonProperty("configTypes")
-    public JobConfigTypeEnum[] configTypes;
+    public JobConfigType[] configTypes;
 
-    public JobListRequestBody withConfigTypes(JobConfigTypeEnum[] configTypes) {
+    public JobListRequestBody withConfigTypes(JobConfigType[] configTypes) {
         this.configTypes = configTypes;
         return this;
     }
@@ -43,7 +43,7 @@ public class JobListRequestBody {
         return this;
     }
     
-    public JobListRequestBody(@JsonProperty("configId") String configId, @JsonProperty("configTypes") JobConfigTypeEnum[] configTypes) {
+    public JobListRequestBody(@JsonProperty("configId") String configId, @JsonProperty("configTypes") JobConfigType[] configTypes) {
         this.configId = configId;
         this.configTypes = configTypes;
   }

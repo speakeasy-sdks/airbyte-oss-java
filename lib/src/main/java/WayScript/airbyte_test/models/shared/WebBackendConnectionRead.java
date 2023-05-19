@@ -59,9 +59,9 @@ public class WebBackendConnectionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("geography")
-    public GeographyEnum geography;
+    public Geography geography;
 
-    public WebBackendConnectionRead withGeography(GeographyEnum geography) {
+    public WebBackendConnectionRead withGeography(Geography geography) {
         this.geography = geography;
         return this;
     }
@@ -88,9 +88,9 @@ public class WebBackendConnectionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("latestSyncJobStatus")
-    public JobStatusEnum latestSyncJobStatus;
+    public JobStatus latestSyncJobStatus;
 
-    public WebBackendConnectionRead withLatestSyncJobStatus(JobStatusEnum latestSyncJobStatus) {
+    public WebBackendConnectionRead withLatestSyncJobStatus(JobStatus latestSyncJobStatus) {
         this.latestSyncJobStatus = latestSyncJobStatus;
         return this;
     }
@@ -108,9 +108,9 @@ public class WebBackendConnectionRead {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("namespaceDefinition")
-    public NamespaceDefinitionTypeEnum namespaceDefinition;
+    public NamespaceDefinitionType namespaceDefinition;
 
-    public WebBackendConnectionRead withNamespaceDefinition(NamespaceDefinitionTypeEnum namespaceDefinition) {
+    public WebBackendConnectionRead withNamespaceDefinition(NamespaceDefinitionType namespaceDefinition) {
         this.namespaceDefinition = namespaceDefinition;
         return this;
     }
@@ -128,9 +128,9 @@ public class WebBackendConnectionRead {
     }
     
     @JsonProperty("nonBreakingChangesPreference")
-    public NonBreakingChangesPreferenceEnum nonBreakingChangesPreference;
+    public NonBreakingChangesPreference nonBreakingChangesPreference;
 
-    public WebBackendConnectionRead withNonBreakingChangesPreference(NonBreakingChangesPreferenceEnum nonBreakingChangesPreference) {
+    public WebBackendConnectionRead withNonBreakingChangesPreference(NonBreakingChangesPreference nonBreakingChangesPreference) {
         this.nonBreakingChangesPreference = nonBreakingChangesPreference;
         return this;
     }
@@ -214,17 +214,17 @@ public class WebBackendConnectionRead {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public WebBackendConnectionRead withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public WebBackendConnectionRead withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
     
     @JsonProperty("schemaChange")
-    public SchemaChangeEnum schemaChange;
+    public SchemaChange schemaChange;
 
-    public WebBackendConnectionRead withSchemaChange(SchemaChangeEnum schemaChange) {
+    public WebBackendConnectionRead withSchemaChange(SchemaChange schemaChange) {
         this.schemaChange = schemaChange;
         return this;
     }
@@ -249,9 +249,9 @@ public class WebBackendConnectionRead {
      * Active means that data is flowing through the connection. Inactive means it is not. Deprecated means the connection is off and cannot be re-activated. the schema field describes the elements of the schema that will be synced.
      */
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public WebBackendConnectionRead withStatus(ConnectionStatusEnum status) {
+    public WebBackendConnectionRead withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }
@@ -267,7 +267,7 @@ public class WebBackendConnectionRead {
         return this;
     }
     
-    public WebBackendConnectionRead(@JsonProperty("connectionId") String connectionId, @JsonProperty("destination") DestinationRead destination, @JsonProperty("destinationId") String destinationId, @JsonProperty("isSyncing") Boolean isSyncing, @JsonProperty("name") String name, @JsonProperty("nonBreakingChangesPreference") NonBreakingChangesPreferenceEnum nonBreakingChangesPreference, @JsonProperty("notifySchemaChanges") Boolean notifySchemaChanges, @JsonProperty("schemaChange") SchemaChangeEnum schemaChange, @JsonProperty("source") SourceRead source, @JsonProperty("sourceId") String sourceId, @JsonProperty("status") ConnectionStatusEnum status, @JsonProperty("syncCatalog") AirbyteCatalog syncCatalog) {
+    public WebBackendConnectionRead(@JsonProperty("connectionId") String connectionId, @JsonProperty("destination") DestinationRead destination, @JsonProperty("destinationId") String destinationId, @JsonProperty("isSyncing") Boolean isSyncing, @JsonProperty("name") String name, @JsonProperty("nonBreakingChangesPreference") NonBreakingChangesPreference nonBreakingChangesPreference, @JsonProperty("notifySchemaChanges") Boolean notifySchemaChanges, @JsonProperty("schemaChange") SchemaChange schemaChange, @JsonProperty("source") SourceRead source, @JsonProperty("sourceId") String sourceId, @JsonProperty("status") ConnectionStatus status, @JsonProperty("syncCatalog") AirbyteCatalog syncCatalog) {
         this.connectionId = connectionId;
         this.destination = destination;
         this.destinationId = destinationId;

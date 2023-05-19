@@ -102,27 +102,27 @@ import WayScript.airbyte_test.models.shared.AirbyteStreamConfiguration;
 import WayScript.airbyte_test.models.shared.ConnectionSchedule;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleData;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicSchedule;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnitEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnit;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataCron;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnitEnum;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTypeEnum;
-import WayScript.airbyte_test.models.shared.ConnectionStatusEnum;
-import WayScript.airbyte_test.models.shared.DestinationSyncModeEnum;
-import WayScript.airbyte_test.models.shared.GeographyEnum;
-import WayScript.airbyte_test.models.shared.NamespaceDefinitionTypeEnum;
-import WayScript.airbyte_test.models.shared.NonBreakingChangesPreferenceEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnit;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleType;
+import WayScript.airbyte_test.models.shared.ConnectionStatus;
+import WayScript.airbyte_test.models.shared.DestinationSyncMode;
+import WayScript.airbyte_test.models.shared.Geography;
+import WayScript.airbyte_test.models.shared.NamespaceDefinitionType;
+import WayScript.airbyte_test.models.shared.NonBreakingChangesPreference;
 import WayScript.airbyte_test.models.shared.OperationCreate;
 import WayScript.airbyte_test.models.shared.OperatorConfiguration;
 import WayScript.airbyte_test.models.shared.OperatorDbt;
 import WayScript.airbyte_test.models.shared.OperatorNormalization;
-import WayScript.airbyte_test.models.shared.OperatorNormalizationOptionEnum;
-import WayScript.airbyte_test.models.shared.OperatorTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorNormalizationOption;
+import WayScript.airbyte_test.models.shared.OperatorType;
 import WayScript.airbyte_test.models.shared.OperatorWebhook;
 import WayScript.airbyte_test.models.shared.OperatorWebhookDbtCloud;
-import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookType;
 import WayScript.airbyte_test.models.shared.ResourceRequirements;
 import WayScript.airbyte_test.models.shared.SelectedFieldInfo;
-import WayScript.airbyte_test.models.shared.SyncModeEnum;
+import WayScript.airbyte_test.models.shared.SyncMode;
 import WayScript.airbyte_test.models.shared.WebBackendConnectionCreate;
 
 public class Application {
@@ -131,37 +131,37 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.WebBackendConnectionCreate req = new WebBackendConnectionCreate("9de1dd70-97b5-4da0-8c57-fa6c78a216e1", "9bafeca6-1914-4981-80b6-4ff8ae170ef0", ConnectionStatusEnum.ACTIVE) {{
-                geography = GeographyEnum.EU;
+            WayScript.airbyte_test.models.shared.WebBackendConnectionCreate req = new WebBackendConnectionCreate("9de1dd70-97b5-4da0-8c57-fa6c78a216e1", "9bafeca6-1914-4981-80b6-4ff8ae170ef0", ConnectionStatus.ACTIVE) {{
+                geography = Geography.EU;
                 name = "Josefina Durgan";
-                namespaceDefinition = NamespaceDefinitionTypeEnum.SOURCE;
+                namespaceDefinition = NamespaceDefinitionType.SOURCE;
                 namespaceFormat = "${SOURCE_NAMESPACE}";
-                nonBreakingChangesPreference = NonBreakingChangesPreferenceEnum.DISABLE;
+                nonBreakingChangesPreference = NonBreakingChangesPreference.DISABLE;
                 operationIds = new String[]{{
                     add("86855596-6732-4aa5-9cb6-682cb70f8cfd"),
                     add("5fb6e91b-9a9f-4748-86e2-c3309db0536d"),
                     add("9e75ca00-6f53-492c-91a2-5a8bf92f9742"),
                 }};
                 operations = new WayScript.airbyte_test.models.shared.OperationCreate[]{{
-                    add(new OperationCreate("labore",                 new OperatorConfiguration(OperatorTypeEnum.WEBHOOK) {{
+                    add(new OperationCreate("labore",                 new OperatorConfiguration(OperatorType.WEBHOOK) {{
                                         dbt = new OperatorDbt("eos") {{
                                             dbtArguments = "quibusdam";
                                             dockerImage = "repellat";
                                             gitRepoBranch = "mollitia";
                                         }};;
                                         normalization = new OperatorNormalization() {{
-                                            option = OperatorNormalizationOptionEnum.BASIC;
+                                            option = OperatorNormalizationOption.BASIC;
                                         }};;
                                         webhook = new OperatorWebhook() {{
                                             dbtCloud = new OperatorWebhookDbtCloud(309192L, 640518L);;
                                             executionBody = "sunt";
                                             executionUrl = "perspiciatis";
                                             webhookConfigId = "7f6de922-151f-4e17-9209-9853e9f543d8";
-                                            webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                            webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                                         }};;
                                     }};, "54439ee2-2446-4044-bbc1-54188c2f56e8") {{
                         name = "Al Mills";
-                        operatorConfiguration = new OperatorConfiguration(OperatorTypeEnum.NORMALIZATION) {{
+                        operatorConfiguration = new OperatorConfiguration(OperatorType.NORMALIZATION) {{
                             dbt = new OperatorDbt("praesentium") {{
                                 dbtArguments = "hic";
                                 dockerImage = "corrupti";
@@ -169,9 +169,9 @@ public class Application {
                                 gitRepoUrl = "earum";
                             }};
                             normalization = new OperatorNormalization() {{
-                                option = OperatorNormalizationOptionEnum.BASIC;
+                                option = OperatorNormalizationOption.BASIC;
                             }};
-                            operatorType = OperatorTypeEnum.NORMALIZATION;
+                            operatorType = OperatorType.NORMALIZATION;
                             webhook = new OperatorWebhook() {{
                                 dbtCloud = new OperatorWebhookDbtCloud(103760L, 154117L) {{
                                     accountId = 138727L;
@@ -180,30 +180,30 @@ public class Application {
                                 executionBody = "ad";
                                 executionUrl = "velit";
                                 webhookConfigId = "59d98387-f7a7-49cd-b2cd-2484da21729f";
-                                webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                             }};
                         }};
                         workspaceId = "ac41ef57-25f1-4169-ac1e-41d8a23c23e3";
                     }}),
-                    add(new OperationCreate("provident",                 new OperatorConfiguration(OperatorTypeEnum.WEBHOOK) {{
+                    add(new OperationCreate("provident",                 new OperatorConfiguration(OperatorType.WEBHOOK) {{
                                         dbt = new OperatorDbt("minus") {{
                                             dbtArguments = "impedit";
                                             dockerImage = "minima";
                                             gitRepoBranch = "cumque";
                                         }};;
                                         normalization = new OperatorNormalization() {{
-                                            option = OperatorNormalizationOptionEnum.BASIC;
+                                            option = OperatorNormalizationOption.BASIC;
                                         }};;
                                         webhook = new OperatorWebhook() {{
                                             dbtCloud = new OperatorWebhookDbtCloud(701477L, 506839L);;
                                             executionBody = "vel";
                                             executionUrl = "doloremque";
                                             webhookConfigId = "f8cd580b-a738-410e-8fe4-447297cd3b1d";
-                                            webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                            webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                                         }};;
                                     }};, "d3bbce24-7b76-484e-bf50-126d71cffbd0") {{
                         name = "Cristina Nader";
-                        operatorConfiguration = new OperatorConfiguration(OperatorTypeEnum.WEBHOOK) {{
+                        operatorConfiguration = new OperatorConfiguration(OperatorType.WEBHOOK) {{
                             dbt = new OperatorDbt("libero") {{
                                 dbtArguments = "dolorem";
                                 dockerImage = "odit";
@@ -211,9 +211,9 @@ public class Application {
                                 gitRepoUrl = "mollitia";
                             }};
                             normalization = new OperatorNormalization() {{
-                                option = OperatorNormalizationOptionEnum.BASIC;
+                                option = OperatorNormalizationOption.BASIC;
                             }};
-                            operatorType = OperatorTypeEnum.WEBHOOK;
+                            operatorType = OperatorType.WEBHOOK;
                             webhook = new OperatorWebhook() {{
                                 dbtCloud = new OperatorWebhookDbtCloud(487625L, 753680L) {{
                                     accountId = 376942L;
@@ -222,30 +222,30 @@ public class Application {
                                 executionBody = "nesciunt";
                                 executionUrl = "harum";
                                 webhookConfigId = "0d51a44b-f01b-4ad8-b06d-46082bfbdc41";
-                                webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                             }};
                         }};
                         workspaceId = "f5d4e2ae-4fb5-4cb3-9d17-638f1edb7835";
                     }}),
-                    add(new OperationCreate("veniam",                 new OperatorConfiguration(OperatorTypeEnum.WEBHOOK) {{
+                    add(new OperationCreate("veniam",                 new OperatorConfiguration(OperatorType.WEBHOOK) {{
                                         dbt = new OperatorDbt("doloremque") {{
                                             dbtArguments = "esse";
                                             dockerImage = "aliquid";
                                             gitRepoBranch = "porro";
                                         }};;
                                         normalization = new OperatorNormalization() {{
-                                            option = OperatorNormalizationOptionEnum.BASIC;
+                                            option = OperatorNormalizationOption.BASIC;
                                         }};;
                                         webhook = new OperatorWebhook() {{
                                             dbtCloud = new OperatorWebhookDbtCloud(790341L, 475600L);;
                                             executionBody = "mollitia";
                                             executionUrl = "quidem";
                                             webhookConfigId = "f616ea5c-7164-4193-8b90-f2e09d19d2fc";
-                                            webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                            webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                                         }};;
                                     }};, "2f9e2e10-5944-4b93-9d23-7a72f90849d6") {{
                         name = "Jean Krajcik";
-                        operatorConfiguration = new OperatorConfiguration(OperatorTypeEnum.WEBHOOK) {{
+                        operatorConfiguration = new OperatorConfiguration(OperatorType.WEBHOOK) {{
                             dbt = new OperatorDbt("unde") {{
                                 dbtArguments = "blanditiis";
                                 dockerImage = "quaerat";
@@ -253,9 +253,9 @@ public class Application {
                                 gitRepoUrl = "ab";
                             }};
                             normalization = new OperatorNormalization() {{
-                                option = OperatorNormalizationOptionEnum.BASIC;
+                                option = OperatorNormalizationOption.BASIC;
                             }};
-                            operatorType = OperatorTypeEnum.DBT;
+                            operatorType = OperatorType.DBT;
                             webhook = new OperatorWebhook() {{
                                 dbtCloud = new OperatorWebhookDbtCloud(282825L, 274622L) {{
                                     accountId = 213405L;
@@ -264,7 +264,7 @@ public class Application {
                                 executionBody = "quidem";
                                 executionUrl = "nulla";
                                 webhookConfigId = "3c43159d-33e5-4953-8001-139863aa41e6";
-                                webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                             }};
                         }};
                         workspaceId = "31cc2f1f-cb51-4c9a-81ff-be9cbd795ee6";
@@ -277,22 +277,22 @@ public class Application {
                     memoryLimit = "quaerat";
                     memoryRequest = "id";
                 }};;
-                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnitEnum.MONTHS, 759537L);;
+                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnit.MONTHS, 759537L);;
                 scheduleData = new ConnectionScheduleData() {{
-                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnitEnum.WEEKS, 492922L);;
+                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnit.WEEKS, 492922L);;
                     cron = new ConnectionScheduleDataCron("nemo", "neque");;
                 }};;
-                scheduleType = ConnectionScheduleTypeEnum.BASIC;
+                scheduleType = ConnectionScheduleType.BASIC;
                 sourceCatalogId = "cd9222c9-ff57-4491-aabf-a2e761f0ca4d";
                 syncCatalog = new AirbyteCatalog(                new WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration[]{{
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.APPEND, SyncModeEnum.FULL_REFRESH) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.APPEND, SyncMode.FULL_REFRESH) {{
                                             aliasName = "quis";
                                             cursorField = new String[]{{
                                                 add("vero"),
                                                 add("reiciendis"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.APPEND;
+                                            destinationSyncMode = DestinationSyncMode.APPEND;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -326,7 +326,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.INCREMENTAL;
+                                            syncMode = SyncMode.INCREMENTAL;
                                         }};
                                         stream = new AirbyteStream("consectetur") {{
                                             defaultCursorField = new String[]{{
@@ -352,23 +352,23 @@ public class Application {
                                                     add("sit"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.FULL_REFRESH),
-                                                add(SyncModeEnum.FULL_REFRESH),
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.FULL_REFRESH),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.FULL_REFRESH),
+                                                add(SyncMode.FULL_REFRESH),
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.FULL_REFRESH),
                                             }};
                                         }};
                                     }}),
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.FULL_REFRESH) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.FULL_REFRESH) {{
                                             aliasName = "in";
                                             cursorField = new String[]{{
                                                 add("distinctio"),
                                                 add("blanditiis"),
                                                 add("saepe"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.APPEND;
+                                            destinationSyncMode = DestinationSyncMode.APPEND;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -427,7 +427,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.INCREMENTAL;
+                                            syncMode = SyncMode.INCREMENTAL;
                                         }};
                                         stream = new AirbyteStream("iste") {{
                                             defaultCursorField = new String[]{{
@@ -448,10 +448,10 @@ public class Application {
                                                     add("quibusdam"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.FULL_REFRESH),
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.FULL_REFRESH),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.FULL_REFRESH),
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.FULL_REFRESH),
                                             }};
                                         }};
                                     }}),
@@ -635,26 +635,26 @@ import WayScript.airbyte_test.models.shared.AirbyteStreamConfiguration;
 import WayScript.airbyte_test.models.shared.ConnectionSchedule;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleData;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicSchedule;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnitEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleDataBasicScheduleTimeUnit;
 import WayScript.airbyte_test.models.shared.ConnectionScheduleDataCron;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnitEnum;
-import WayScript.airbyte_test.models.shared.ConnectionScheduleTypeEnum;
-import WayScript.airbyte_test.models.shared.ConnectionStatusEnum;
-import WayScript.airbyte_test.models.shared.DestinationSyncModeEnum;
-import WayScript.airbyte_test.models.shared.GeographyEnum;
-import WayScript.airbyte_test.models.shared.NamespaceDefinitionTypeEnum;
-import WayScript.airbyte_test.models.shared.NonBreakingChangesPreferenceEnum;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleTimeUnit;
+import WayScript.airbyte_test.models.shared.ConnectionScheduleType;
+import WayScript.airbyte_test.models.shared.ConnectionStatus;
+import WayScript.airbyte_test.models.shared.DestinationSyncMode;
+import WayScript.airbyte_test.models.shared.Geography;
+import WayScript.airbyte_test.models.shared.NamespaceDefinitionType;
+import WayScript.airbyte_test.models.shared.NonBreakingChangesPreference;
 import WayScript.airbyte_test.models.shared.OperatorConfiguration;
 import WayScript.airbyte_test.models.shared.OperatorDbt;
 import WayScript.airbyte_test.models.shared.OperatorNormalization;
-import WayScript.airbyte_test.models.shared.OperatorNormalizationOptionEnum;
-import WayScript.airbyte_test.models.shared.OperatorTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorNormalizationOption;
+import WayScript.airbyte_test.models.shared.OperatorType;
 import WayScript.airbyte_test.models.shared.OperatorWebhook;
 import WayScript.airbyte_test.models.shared.OperatorWebhookDbtCloud;
-import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookTypeEnum;
+import WayScript.airbyte_test.models.shared.OperatorWebhookWebhookType;
 import WayScript.airbyte_test.models.shared.ResourceRequirements;
 import WayScript.airbyte_test.models.shared.SelectedFieldInfo;
-import WayScript.airbyte_test.models.shared.SyncModeEnum;
+import WayScript.airbyte_test.models.shared.SyncMode;
 import WayScript.airbyte_test.models.shared.WebBackendConnectionUpdate;
 import WayScript.airbyte_test.models.shared.WebBackendOperationCreateOrUpdate;
 
@@ -665,33 +665,33 @@ public class Application {
                 .build();
 
             WayScript.airbyte_test.models.shared.WebBackendConnectionUpdate req = new WebBackendConnectionUpdate("0e252765-b1d6-42fc-9ace-1f01216ce223") {{
-                geography = GeographyEnum.US;
+                geography = Geography.US;
                 name = "Casey Weimann";
-                namespaceDefinition = NamespaceDefinitionTypeEnum.CUSTOMFORMAT;
+                namespaceDefinition = NamespaceDefinitionType.CUSTOMFORMAT;
                 namespaceFormat = "${SOURCE_NAMESPACE}";
-                nonBreakingChangesPreference = NonBreakingChangesPreferenceEnum.DISABLE;
+                nonBreakingChangesPreference = NonBreakingChangesPreference.DISABLE;
                 notifySchemaChanges = false;
                 operations = new WayScript.airbyte_test.models.shared.WebBackendOperationCreateOrUpdate[]{{
-                    add(new WebBackendOperationCreateOrUpdate("officiis",                 new OperatorConfiguration(OperatorTypeEnum.NORMALIZATION) {{
+                    add(new WebBackendOperationCreateOrUpdate("officiis",                 new OperatorConfiguration(OperatorType.NORMALIZATION) {{
                                         dbt = new OperatorDbt("quas") {{
                                             dbtArguments = "aut";
                                             dockerImage = "autem";
                                             gitRepoBranch = "dolorem";
                                         }};;
                                         normalization = new OperatorNormalization() {{
-                                            option = OperatorNormalizationOptionEnum.BASIC;
+                                            option = OperatorNormalizationOption.BASIC;
                                         }};;
                                         webhook = new OperatorWebhook() {{
                                             dbtCloud = new OperatorWebhookDbtCloud(131249L, 699989L);;
                                             executionBody = "iste";
                                             executionUrl = "occaecati";
                                             webhookConfigId = "54b6fa22-0636-4982-8553-cb10006bef49";
-                                            webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                            webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                                         }};;
                                     }};, "21ec2053-b749-4366-ac8e-e0f2bf19588d") {{
                         name = "Dennis Moen";
                         operationId = "59f439e3-9266-4cbd-95f7-aa2b24113695";
-                        operatorConfiguration = new OperatorConfiguration(OperatorTypeEnum.DBT) {{
+                        operatorConfiguration = new OperatorConfiguration(OperatorType.DBT) {{
                             dbt = new OperatorDbt("aliquid") {{
                                 dbtArguments = "temporibus";
                                 dockerImage = "et";
@@ -699,9 +699,9 @@ public class Application {
                                 gitRepoUrl = "nisi";
                             }};
                             normalization = new OperatorNormalization() {{
-                                option = OperatorNormalizationOptionEnum.BASIC;
+                                option = OperatorNormalizationOption.BASIC;
                             }};
-                            operatorType = OperatorTypeEnum.DBT;
+                            operatorType = OperatorType.DBT;
                             webhook = new OperatorWebhook() {{
                                 dbtCloud = new OperatorWebhookDbtCloud(809200L, 757009L) {{
                                     accountId = 558583L;
@@ -710,7 +710,7 @@ public class Application {
                                 executionBody = "quaerat";
                                 executionUrl = "veniam";
                                 webhookConfigId = "96217c29-7767-4633-8254-038bfb5971e9";
-                                webhookType = OperatorWebhookWebhookTypeEnum.DBT_CLOUD;
+                                webhookType = OperatorWebhookWebhookType.DBT_CLOUD;
                             }};
                         }};
                         workspaceId = "19055738-9ced-4bac-bfda-39594d66bc2a";
@@ -723,24 +723,24 @@ public class Application {
                     memoryLimit = "aut";
                     memoryRequest = "sequi";
                 }};;
-                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnitEnum.MONTHS, 204466L);;
+                schedule = new ConnectionSchedule(ConnectionScheduleTimeUnit.MONTHS, 204466L);;
                 scheduleData = new ConnectionScheduleData() {{
-                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnitEnum.MONTHS, 904968L);;
+                    basicSchedule = new ConnectionScheduleDataBasicSchedule(ConnectionScheduleDataBasicScheduleTimeUnit.MONTHS, 904968L);;
                     cron = new ConnectionScheduleDataCron("nobis", "est");;
                 }};;
-                scheduleType = ConnectionScheduleTypeEnum.MANUAL;
+                scheduleType = ConnectionScheduleType.MANUAL;
                 skipReset = false;
                 sourceCatalogId = "97be3e90-bc40-4df8-a8fd-52405cb331d4";
-                status = ConnectionStatusEnum.INACTIVE;
+                status = ConnectionStatus.INACTIVE;
                 syncCatalog = new AirbyteCatalog(                new WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration[]{{
                                     add(new AirbyteStreamAndConfiguration() {{
-                                        config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.APPEND_DEDUP, SyncModeEnum.INCREMENTAL) {{
+                                        config = new AirbyteStreamConfiguration(DestinationSyncMode.APPEND_DEDUP, SyncMode.INCREMENTAL) {{
                                             aliasName = "reiciendis";
                                             cursorField = new String[]{{
                                                 add("doloribus"),
                                                 add("et"),
                                             }};
-                                            destinationSyncMode = DestinationSyncModeEnum.APPEND;
+                                            destinationSyncMode = DestinationSyncMode.APPEND;
                                             fieldSelectionEnabled = false;
                                             primaryKey = new String[][]{{
                                                 add(new String[]{{
@@ -777,7 +777,7 @@ public class Application {
                                                 }}),
                                             }};
                                             suggested = false;
-                                            syncMode = SyncModeEnum.INCREMENTAL;
+                                            syncMode = SyncMode.INCREMENTAL;
                                         }};
                                         stream = new AirbyteStream("provident") {{
                                             defaultCursorField = new String[]{{
@@ -804,11 +804,11 @@ public class Application {
                                                     add("doloremque"),
                                                 }}),
                                             }};
-                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                add(SyncModeEnum.FULL_REFRESH),
-                                                add(SyncModeEnum.FULL_REFRESH),
-                                                add(SyncModeEnum.INCREMENTAL),
-                                                add(SyncModeEnum.FULL_REFRESH),
+                                            supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                add(SyncMode.FULL_REFRESH),
+                                                add(SyncMode.FULL_REFRESH),
+                                                add(SyncMode.INCREMENTAL),
+                                                add(SyncMode.FULL_REFRESH),
                                             }};
                                         }};
                                     }}),

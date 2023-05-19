@@ -31,9 +31,9 @@ public class ConnectionUpdate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("geography")
-    public GeographyEnum geography;
+    public Geography geography;
 
-    public ConnectionUpdate withGeography(GeographyEnum geography) {
+    public ConnectionUpdate withGeography(Geography geography) {
         this.geography = geography;
         return this;
     }
@@ -55,9 +55,9 @@ public class ConnectionUpdate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("namespaceDefinition")
-    public NamespaceDefinitionTypeEnum namespaceDefinition;
+    public NamespaceDefinitionType namespaceDefinition;
 
-    public ConnectionUpdate withNamespaceDefinition(NamespaceDefinitionTypeEnum namespaceDefinition) {
+    public ConnectionUpdate withNamespaceDefinition(NamespaceDefinitionType namespaceDefinition) {
         this.namespaceDefinition = namespaceDefinition;
         return this;
     }
@@ -76,9 +76,9 @@ public class ConnectionUpdate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("nonBreakingChangesPreference")
-    public NonBreakingChangesPreferenceEnum nonBreakingChangesPreference;
+    public NonBreakingChangesPreference nonBreakingChangesPreference;
 
-    public ConnectionUpdate withNonBreakingChangesPreference(NonBreakingChangesPreferenceEnum nonBreakingChangesPreference) {
+    public ConnectionUpdate withNonBreakingChangesPreference(NonBreakingChangesPreference nonBreakingChangesPreference) {
         this.nonBreakingChangesPreference = nonBreakingChangesPreference;
         return this;
     }
@@ -154,9 +154,9 @@ public class ConnectionUpdate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public ConnectionUpdate withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public ConnectionUpdate withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
@@ -175,9 +175,9 @@ public class ConnectionUpdate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public ConnectionUpdate withStatus(ConnectionStatusEnum status) {
+    public ConnectionUpdate withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }

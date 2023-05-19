@@ -37,9 +37,9 @@ public class AirbyteStreamConfiguration {
     }
     
     @JsonProperty("destinationSyncMode")
-    public DestinationSyncModeEnum destinationSyncMode;
+    public DestinationSyncMode destinationSyncMode;
 
-    public AirbyteStreamConfiguration withDestinationSyncMode(DestinationSyncModeEnum destinationSyncMode) {
+    public AirbyteStreamConfiguration withDestinationSyncMode(DestinationSyncMode destinationSyncMode) {
         this.destinationSyncMode = destinationSyncMode;
         return this;
     }
@@ -105,14 +105,14 @@ public class AirbyteStreamConfiguration {
     }
     
     @JsonProperty("syncMode")
-    public SyncModeEnum syncMode;
+    public SyncMode syncMode;
 
-    public AirbyteStreamConfiguration withSyncMode(SyncModeEnum syncMode) {
+    public AirbyteStreamConfiguration withSyncMode(SyncMode syncMode) {
         this.syncMode = syncMode;
         return this;
     }
     
-    public AirbyteStreamConfiguration(@JsonProperty("destinationSyncMode") DestinationSyncModeEnum destinationSyncMode, @JsonProperty("syncMode") SyncModeEnum syncMode) {
+    public AirbyteStreamConfiguration(@JsonProperty("destinationSyncMode") DestinationSyncMode destinationSyncMode, @JsonProperty("syncMode") SyncMode syncMode) {
         this.destinationSyncMode = destinationSyncMode;
         this.syncMode = syncMode;
   }

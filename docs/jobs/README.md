@@ -217,7 +217,7 @@ package hello.world;
 
 import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.ListJobsForResponse;
-import WayScript.airbyte_test.models.shared.JobConfigTypeEnum;
+import WayScript.airbyte_test.models.shared.JobConfigType;
 import WayScript.airbyte_test.models.shared.JobListRequestBody;
 import WayScript.airbyte_test.models.shared.Pagination;
 
@@ -227,9 +227,9 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.JobListRequestBody req = new JobListRequestBody("recusandae",                 new WayScript.airbyte_test.models.shared.JobConfigTypeEnum[]{{
-                                add(JobConfigTypeEnum.CHECK_CONNECTION_SOURCE),
-                                add(JobConfigTypeEnum.CHECK_CONNECTION_SOURCE),
+            WayScript.airbyte_test.models.shared.JobListRequestBody req = new JobListRequestBody("recusandae",                 new WayScript.airbyte_test.models.shared.JobConfigType[]{{
+                                add(JobConfigType.CHECK_CONNECTION_SOURCE),
+                                add(JobConfigType.CHECK_CONNECTION_SOURCE),
                             }}) {{
                 includingJobId = 982574L;
                 pagination = new Pagination() {{

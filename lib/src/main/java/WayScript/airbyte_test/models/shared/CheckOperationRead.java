@@ -22,14 +22,14 @@ public class CheckOperationRead {
     }
     
     @JsonProperty("status")
-    public CheckOperationReadStatusEnum status;
+    public CheckOperationReadStatus status;
 
-    public CheckOperationRead withStatus(CheckOperationReadStatusEnum status) {
+    public CheckOperationRead withStatus(CheckOperationReadStatus status) {
         this.status = status;
         return this;
     }
     
-    public CheckOperationRead(@JsonProperty("status") CheckOperationReadStatusEnum status) {
+    public CheckOperationRead(@JsonProperty("status") CheckOperationReadStatus status) {
         this.status = status;
   }
 }

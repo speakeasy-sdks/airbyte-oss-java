@@ -24,9 +24,9 @@ public class JobDebugRead {
     }
     
     @JsonProperty("configType")
-    public JobConfigTypeEnum configType;
+    public JobConfigType configType;
 
-    public JobDebugRead withConfigType(JobConfigTypeEnum configType) {
+    public JobDebugRead withConfigType(JobConfigType configType) {
         this.configType = configType;
         return this;
     }
@@ -56,14 +56,14 @@ public class JobDebugRead {
     }
     
     @JsonProperty("status")
-    public JobStatusEnum status;
+    public JobStatus status;
 
-    public JobDebugRead withStatus(JobStatusEnum status) {
+    public JobDebugRead withStatus(JobStatus status) {
         this.status = status;
         return this;
     }
     
-    public JobDebugRead(@JsonProperty("airbyteVersion") String airbyteVersion, @JsonProperty("configId") String configId, @JsonProperty("configType") JobConfigTypeEnum configType, @JsonProperty("destinationDefinition") DestinationDefinitionRead destinationDefinition, @JsonProperty("id") Long id, @JsonProperty("sourceDefinition") SourceDefinitionRead sourceDefinition, @JsonProperty("status") JobStatusEnum status) {
+    public JobDebugRead(@JsonProperty("airbyteVersion") String airbyteVersion, @JsonProperty("configId") String configId, @JsonProperty("configType") JobConfigType configType, @JsonProperty("destinationDefinition") DestinationDefinitionRead destinationDefinition, @JsonProperty("id") Long id, @JsonProperty("sourceDefinition") SourceDefinitionRead sourceDefinition, @JsonProperty("status") JobStatus status) {
         this.airbyteVersion = airbyteVersion;
         this.configId = configId;
         this.configType = configType;

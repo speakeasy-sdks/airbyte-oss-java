@@ -22,7 +22,7 @@ import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.CreateOrUpdateStateResponse;
 import WayScript.airbyte_test.models.shared.ConnectionState;
 import WayScript.airbyte_test.models.shared.ConnectionStateCreateOrUpdate;
-import WayScript.airbyte_test.models.shared.ConnectionStateTypeEnum;
+import WayScript.airbyte_test.models.shared.ConnectionStateType;
 import WayScript.airbyte_test.models.shared.GlobalState;
 import WayScript.airbyte_test.models.shared.StreamDescriptor;
 import WayScript.airbyte_test.models.shared.StreamState;
@@ -33,7 +33,7 @@ public class Application {
             AirbyteTest sdk = AirbyteTest.builder()
                 .build();
 
-            WayScript.airbyte_test.models.shared.ConnectionStateCreateOrUpdate req = new ConnectionStateCreateOrUpdate("78adc1ac-600d-4ec0-81ac-802e2ec09ff8",                 new ConnectionState("f0f816ff-3477-4c13-a902-c14125b0960a", ConnectionStateTypeEnum.STREAM) {{
+            WayScript.airbyte_test.models.shared.ConnectionStateCreateOrUpdate req = new ConnectionStateCreateOrUpdate("78adc1ac-600d-4ec0-81ac-802e2ec09ff8",                 new ConnectionState("f0f816ff-3477-4c13-a902-c14125b0960a", ConnectionStateType.STREAM) {{
                                 globalState = new GlobalState(                new WayScript.airbyte_test.models.shared.StreamState[]{{
                                                     add(new StreamState(                new StreamDescriptor("cupiditate") {{
                                                                         namespace = "aliquam";
@@ -256,7 +256,7 @@ import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.SaveSyncConfigResponse;
 import WayScript.airbyte_test.models.shared.AttemptSyncConfig;
 import WayScript.airbyte_test.models.shared.ConnectionState;
-import WayScript.airbyte_test.models.shared.ConnectionStateTypeEnum;
+import WayScript.airbyte_test.models.shared.ConnectionStateType;
 import WayScript.airbyte_test.models.shared.GlobalState;
 import WayScript.airbyte_test.models.shared.SaveAttemptSyncConfigRequestBody;
 import WayScript.airbyte_test.models.shared.StreamDescriptor;
@@ -269,7 +269,7 @@ public class Application {
                 .build();
 
             WayScript.airbyte_test.models.shared.SaveAttemptSyncConfigRequestBody req = new SaveAttemptSyncConfigRequestBody(996072, 921060L,                 new AttemptSyncConfig("architecto", "adipisci") {{
-                                state = new ConnectionState("db4f62cb-a3f8-4941-aebc-0b80a6924d3b", ConnectionStateTypeEnum.GLOBAL) {{
+                                state = new ConnectionState("db4f62cb-a3f8-4941-aebc-0b80a6924d3b", ConnectionStateType.GLOBAL) {{
                                     globalState = new GlobalState(                new WayScript.airbyte_test.models.shared.StreamState[]{{
                                                         add(new StreamState(                new StreamDescriptor("at") {{
                                                                             namespace = "possimus";
@@ -422,10 +422,10 @@ import WayScript.airbyte_test.models.shared.AirbyteCatalog;
 import WayScript.airbyte_test.models.shared.AirbyteStream;
 import WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration;
 import WayScript.airbyte_test.models.shared.AirbyteStreamConfiguration;
-import WayScript.airbyte_test.models.shared.DestinationSyncModeEnum;
+import WayScript.airbyte_test.models.shared.DestinationSyncMode;
 import WayScript.airbyte_test.models.shared.SelectedFieldInfo;
 import WayScript.airbyte_test.models.shared.SourceDiscoverSchemaWriteRequestBody;
-import WayScript.airbyte_test.models.shared.SyncModeEnum;
+import WayScript.airbyte_test.models.shared.SyncMode;
 
 public class Application {
     public static void main(String[] args) {
@@ -435,14 +435,14 @@ public class Application {
 
             WayScript.airbyte_test.models.shared.SourceDiscoverSchemaWriteRequestBody req = new SourceDiscoverSchemaWriteRequestBody(                new AirbyteCatalog(                new WayScript.airbyte_test.models.shared.AirbyteStreamAndConfiguration[]{{
                                                 add(new AirbyteStreamAndConfiguration() {{
-                                                    config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.OVERWRITE, SyncModeEnum.FULL_REFRESH) {{
+                                                    config = new AirbyteStreamConfiguration(DestinationSyncMode.OVERWRITE, SyncMode.FULL_REFRESH) {{
                                                         aliasName = "id";
                                                         cursorField = new String[]{{
                                                             add("occaecati"),
                                                             add("libero"),
                                                             add("quo"),
                                                         }};
-                                                        destinationSyncMode = DestinationSyncModeEnum.OVERWRITE;
+                                                        destinationSyncMode = DestinationSyncMode.OVERWRITE;
                                                         fieldSelectionEnabled = false;
                                                         primaryKey = new String[][]{{
                                                             add(new String[]{{
@@ -475,7 +475,7 @@ public class Application {
                                                             }}),
                                                         }};
                                                         suggested = false;
-                                                        syncMode = SyncModeEnum.INCREMENTAL;
+                                                        syncMode = SyncMode.INCREMENTAL;
                                                     }};
                                                     stream = new AirbyteStream("eum") {{
                                                         defaultCursorField = new String[]{{
@@ -505,16 +505,16 @@ public class Application {
                                                                 add("quia"),
                                                             }}),
                                                         }};
-                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.FULL_REFRESH),
+                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.FULL_REFRESH),
                                                         }};
                                                     }};
                                                 }}),
                                                 add(new AirbyteStreamAndConfiguration() {{
-                                                    config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.APPEND_DEDUP, SyncModeEnum.FULL_REFRESH) {{
+                                                    config = new AirbyteStreamConfiguration(DestinationSyncMode.APPEND_DEDUP, SyncMode.FULL_REFRESH) {{
                                                         aliasName = "nemo";
                                                         cursorField = new String[]{{
                                                             add("nesciunt"),
@@ -522,7 +522,7 @@ public class Application {
                                                             add("odio"),
                                                             add("minus"),
                                                         }};
-                                                        destinationSyncMode = DestinationSyncModeEnum.APPEND_DEDUP;
+                                                        destinationSyncMode = DestinationSyncMode.APPEND_DEDUP;
                                                         fieldSelectionEnabled = false;
                                                         primaryKey = new String[][]{{
                                                             add(new String[]{{
@@ -558,7 +558,7 @@ public class Application {
                                                             }}),
                                                         }};
                                                         suggested = false;
-                                                        syncMode = SyncModeEnum.FULL_REFRESH;
+                                                        syncMode = SyncMode.FULL_REFRESH;
                                                     }};
                                                     stream = new AirbyteStream("deleniti") {{
                                                         defaultCursorField = new String[]{{
@@ -576,16 +576,16 @@ public class Application {
                                                                 add("numquam"),
                                                             }}),
                                                         }};
-                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.FULL_REFRESH),
+                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.FULL_REFRESH),
                                                         }};
                                                     }};
                                                 }}),
                                                 add(new AirbyteStreamAndConfiguration() {{
-                                                    config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.APPEND_DEDUP, SyncModeEnum.FULL_REFRESH) {{
+                                                    config = new AirbyteStreamConfiguration(DestinationSyncMode.APPEND_DEDUP, SyncMode.FULL_REFRESH) {{
                                                         aliasName = "expedita";
                                                         cursorField = new String[]{{
                                                             add("excepturi"),
@@ -593,7 +593,7 @@ public class Application {
                                                             add("sed"),
                                                             add("beatae"),
                                                         }};
-                                                        destinationSyncMode = DestinationSyncModeEnum.OVERWRITE;
+                                                        destinationSyncMode = DestinationSyncMode.OVERWRITE;
                                                         fieldSelectionEnabled = false;
                                                         primaryKey = new String[][]{{
                                                             add(new String[]{{
@@ -625,7 +625,7 @@ public class Application {
                                                             }}),
                                                         }};
                                                         suggested = false;
-                                                        syncMode = SyncModeEnum.FULL_REFRESH;
+                                                        syncMode = SyncMode.FULL_REFRESH;
                                                     }};
                                                     stream = new AirbyteStream("sequi") {{
                                                         defaultCursorField = new String[]{{
@@ -660,21 +660,21 @@ public class Application {
                                                                 add("modi"),
                                                             }}),
                                                         }};
-                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.INCREMENTAL),
+                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.INCREMENTAL),
                                                         }};
                                                     }};
                                                 }}),
                                                 add(new AirbyteStreamAndConfiguration() {{
-                                                    config = new AirbyteStreamConfiguration(DestinationSyncModeEnum.APPEND, SyncModeEnum.FULL_REFRESH) {{
+                                                    config = new AirbyteStreamConfiguration(DestinationSyncMode.APPEND, SyncMode.FULL_REFRESH) {{
                                                         aliasName = "saepe";
                                                         cursorField = new String[]{{
                                                             add("esse"),
                                                         }};
-                                                        destinationSyncMode = DestinationSyncModeEnum.APPEND_DEDUP;
+                                                        destinationSyncMode = DestinationSyncMode.APPEND_DEDUP;
                                                         fieldSelectionEnabled = false;
                                                         primaryKey = new String[][]{{
                                                             add(new String[]{{
@@ -719,7 +719,7 @@ public class Application {
                                                             }}),
                                                         }};
                                                         suggested = false;
-                                                        syncMode = SyncModeEnum.INCREMENTAL;
+                                                        syncMode = SyncMode.INCREMENTAL;
                                                     }};
                                                     stream = new AirbyteStream("maiores") {{
                                                         defaultCursorField = new String[]{{
@@ -748,11 +748,11 @@ public class Application {
                                                                 add("animi"),
                                                             }}),
                                                         }};
-                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncModeEnum[]{{
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.FULL_REFRESH),
-                                                            add(SyncModeEnum.INCREMENTAL),
-                                                            add(SyncModeEnum.INCREMENTAL),
+                                                        supportedSyncModes = new WayScript.airbyte_test.models.shared.SyncMode[]{{
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.FULL_REFRESH),
+                                                            add(SyncMode.INCREMENTAL),
+                                                            add(SyncMode.INCREMENTAL),
                                                         }};
                                                     }};
                                                 }}),

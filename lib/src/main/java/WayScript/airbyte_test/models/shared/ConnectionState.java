@@ -39,9 +39,9 @@ public class ConnectionState {
     }
     
     @JsonProperty("stateType")
-    public ConnectionStateTypeEnum stateType;
+    public ConnectionStateType stateType;
 
-    public ConnectionState withStateType(ConnectionStateTypeEnum stateType) {
+    public ConnectionState withStateType(ConnectionStateType stateType) {
         this.stateType = stateType;
         return this;
     }
@@ -55,7 +55,7 @@ public class ConnectionState {
         return this;
     }
     
-    public ConnectionState(@JsonProperty("connectionId") String connectionId, @JsonProperty("stateType") ConnectionStateTypeEnum stateType) {
+    public ConnectionState(@JsonProperty("connectionId") String connectionId, @JsonProperty("stateType") ConnectionStateType stateType) {
         this.connectionId = connectionId;
         this.stateType = stateType;
   }

@@ -125,7 +125,7 @@ import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.SaveSyncConfigResponse;
 import WayScript.airbyte_test.models.shared.AttemptSyncConfig;
 import WayScript.airbyte_test.models.shared.ConnectionState;
-import WayScript.airbyte_test.models.shared.ConnectionStateTypeEnum;
+import WayScript.airbyte_test.models.shared.ConnectionStateType;
 import WayScript.airbyte_test.models.shared.GlobalState;
 import WayScript.airbyte_test.models.shared.SaveAttemptSyncConfigRequestBody;
 import WayScript.airbyte_test.models.shared.StreamDescriptor;
@@ -138,7 +138,7 @@ public class Application {
                 .build();
 
             WayScript.airbyte_test.models.shared.SaveAttemptSyncConfigRequestBody req = new SaveAttemptSyncConfigRequestBody(358152, 128926L,                 new AttemptSyncConfig("nobis", "enim") {{
-                                state = new ConnectionState("955907af-f1a3-4a2f-a946-7739251aa52c", ConnectionStateTypeEnum.GLOBAL) {{
+                                state = new ConnectionState("955907af-f1a3-4a2f-a946-7739251aa52c", ConnectionStateType.GLOBAL) {{
                                     globalState = new GlobalState(                new WayScript.airbyte_test.models.shared.StreamState[]{{
                                                         add(new StreamState(                new StreamDescriptor("vero") {{
                                                                             namespace = "nihil";

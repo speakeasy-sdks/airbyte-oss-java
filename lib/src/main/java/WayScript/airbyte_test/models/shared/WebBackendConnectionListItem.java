@@ -50,9 +50,9 @@ public class WebBackendConnectionListItem {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("latestSyncJobStatus")
-    public JobStatusEnum latestSyncJobStatus;
+    public JobStatus latestSyncJobStatus;
 
-    public WebBackendConnectionListItem withLatestSyncJobStatus(JobStatusEnum latestSyncJobStatus) {
+    public WebBackendConnectionListItem withLatestSyncJobStatus(JobStatus latestSyncJobStatus) {
         this.latestSyncJobStatus = latestSyncJobStatus;
         return this;
     }
@@ -82,17 +82,17 @@ public class WebBackendConnectionListItem {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public WebBackendConnectionListItem withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public WebBackendConnectionListItem withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
     
     @JsonProperty("schemaChange")
-    public SchemaChangeEnum schemaChange;
+    public SchemaChange schemaChange;
 
-    public WebBackendConnectionListItem withSchemaChange(SchemaChangeEnum schemaChange) {
+    public WebBackendConnectionListItem withSchemaChange(SchemaChange schemaChange) {
         this.schemaChange = schemaChange;
         return this;
     }
@@ -109,14 +109,14 @@ public class WebBackendConnectionListItem {
      * Active means that data is flowing through the connection. Inactive means it is not. Deprecated means the connection is off and cannot be re-activated. the schema field describes the elements of the schema that will be synced.
      */
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public WebBackendConnectionListItem withStatus(ConnectionStatusEnum status) {
+    public WebBackendConnectionListItem withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }
     
-    public WebBackendConnectionListItem(@JsonProperty("connectionId") String connectionId, @JsonProperty("destination") DestinationSnippetRead destination, @JsonProperty("isSyncing") Boolean isSyncing, @JsonProperty("name") String name, @JsonProperty("schemaChange") SchemaChangeEnum schemaChange, @JsonProperty("source") SourceSnippetRead source, @JsonProperty("status") ConnectionStatusEnum status) {
+    public WebBackendConnectionListItem(@JsonProperty("connectionId") String connectionId, @JsonProperty("destination") DestinationSnippetRead destination, @JsonProperty("isSyncing") Boolean isSyncing, @JsonProperty("name") String name, @JsonProperty("schemaChange") SchemaChange schemaChange, @JsonProperty("source") SourceSnippetRead source, @JsonProperty("status") ConnectionStatus status) {
         this.connectionId = connectionId;
         this.destination = destination;
         this.isSyncing = isSyncing;

@@ -69,9 +69,9 @@ public class DestinationDefinitionSpecificationRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("supportedDestinationSyncModes")
-    public DestinationSyncModeEnum[] supportedDestinationSyncModes;
+    public DestinationSyncMode[] supportedDestinationSyncModes;
 
-    public DestinationDefinitionSpecificationRead withSupportedDestinationSyncModes(DestinationSyncModeEnum[] supportedDestinationSyncModes) {
+    public DestinationDefinitionSpecificationRead withSupportedDestinationSyncModes(DestinationSyncMode[] supportedDestinationSyncModes) {
         this.supportedDestinationSyncModes = supportedDestinationSyncModes;
         return this;
     }

@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class WebBackendGeographiesListResult {
     @JsonProperty("geographies")
-    public GeographyEnum[] geographies;
+    public Geography[] geographies;
 
-    public WebBackendGeographiesListResult withGeographies(GeographyEnum[] geographies) {
+    public WebBackendGeographiesListResult withGeographies(Geography[] geographies) {
         this.geographies = geographies;
         return this;
     }
     
-    public WebBackendGeographiesListResult(@JsonProperty("geographies") GeographyEnum[] geographies) {
+    public WebBackendGeographiesListResult(@JsonProperty("geographies") Geography[] geographies) {
         this.geographies = geographies;
   }
 }

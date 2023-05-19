@@ -32,7 +32,7 @@ import WayScript.airbyte_test.models.operations.CreateCustomDestinationDefinitio
 import WayScript.airbyte_test.models.shared.ActorDefinitionResourceRequirements;
 import WayScript.airbyte_test.models.shared.CustomDestinationDefinitionCreate;
 import WayScript.airbyte_test.models.shared.DestinationDefinitionCreate;
-import WayScript.airbyte_test.models.shared.JobTypeEnum;
+import WayScript.airbyte_test.models.shared.JobType;
 import WayScript.airbyte_test.models.shared.JobTypeResourceLimit;
 import WayScript.airbyte_test.models.shared.ResourceRequirements;
 
@@ -52,13 +52,13 @@ public class Application {
                                         memoryRequest = "dolores";
                                     }};;
                                     jobSpecific = new WayScript.airbyte_test.models.shared.JobTypeResourceLimit[]{{
-                                        add(new JobTypeResourceLimit(JobTypeEnum.RESET_CONNECTION,                 new ResourceRequirements() {{
+                                        add(new JobTypeResourceLimit(JobType.RESET_CONNECTION,                 new ResourceRequirements() {{
                                                             cpuLimit = "accusamus";
                                                             cpuRequest = "necessitatibus";
                                                             memoryLimit = "tempore";
                                                             memoryRequest = "sint";
                                                         }};) {{
-                                            jobType = JobTypeEnum.GET_SPEC;
+                                            jobType = JobType.GET_SPEC;
                                             resourceRequirements = new ResourceRequirements() {{
                                                 cpuLimit = "est";
                                                 cpuRequest = "facere";
@@ -66,13 +66,13 @@ public class Application {
                                                 memoryRequest = "molestiae";
                                             }};
                                         }}),
-                                        add(new JobTypeResourceLimit(JobTypeEnum.DISCOVER_SCHEMA,                 new ResourceRequirements() {{
+                                        add(new JobTypeResourceLimit(JobType.DISCOVER_SCHEMA,                 new ResourceRequirements() {{
                                                             cpuLimit = "officiis";
                                                             cpuRequest = "voluptatibus";
                                                             memoryLimit = "cum";
                                                             memoryRequest = "at";
                                                         }};) {{
-                                            jobType = JobTypeEnum.DISCOVER_SCHEMA;
+                                            jobType = JobType.DISCOVER_SCHEMA;
                                             resourceRequirements = new ResourceRequirements() {{
                                                 cpuLimit = "autem";
                                                 cpuRequest = "ipsam";
@@ -80,13 +80,13 @@ public class Application {
                                                 memoryRequest = "laudantium";
                                             }};
                                         }}),
-                                        add(new JobTypeResourceLimit(JobTypeEnum.GET_SPEC,                 new ResourceRequirements() {{
+                                        add(new JobTypeResourceLimit(JobType.GET_SPEC,                 new ResourceRequirements() {{
                                                             cpuLimit = "expedita";
                                                             cpuRequest = "officiis";
                                                             memoryLimit = "eos";
                                                             memoryRequest = "quibusdam";
                                                         }};) {{
-                                            jobType = JobTypeEnum.GET_SPEC;
+                                            jobType = JobType.GET_SPEC;
                                             resourceRequirements = new ResourceRequirements() {{
                                                 cpuLimit = "quia";
                                                 cpuRequest = "quidem";
@@ -94,13 +94,13 @@ public class Application {
                                                 memoryRequest = "repudiandae";
                                             }};
                                         }}),
-                                        add(new JobTypeResourceLimit(JobTypeEnum.RESET_CONNECTION,                 new ResourceRequirements() {{
+                                        add(new JobTypeResourceLimit(JobType.RESET_CONNECTION,                 new ResourceRequirements() {{
                                                             cpuLimit = "earum";
                                                             cpuRequest = "adipisci";
                                                             memoryLimit = "recusandae";
                                                             memoryRequest = "similique";
                                                         }};) {{
-                                            jobType = JobTypeEnum.SYNC;
+                                            jobType = JobType.SYNC;
                                             resourceRequirements = new ResourceRequirements() {{
                                                 cpuLimit = "praesentium";
                                                 cpuRequest = "odit";
@@ -428,7 +428,7 @@ import WayScript.airbyte_test.AirbyteTest;
 import WayScript.airbyte_test.models.operations.UpdateDestinationDefinitionResponse;
 import WayScript.airbyte_test.models.shared.ActorDefinitionResourceRequirements;
 import WayScript.airbyte_test.models.shared.DestinationDefinitionUpdate;
-import WayScript.airbyte_test.models.shared.JobTypeEnum;
+import WayScript.airbyte_test.models.shared.JobType;
 import WayScript.airbyte_test.models.shared.JobTypeResourceLimit;
 import WayScript.airbyte_test.models.shared.ResourceRequirements;
 
@@ -448,13 +448,13 @@ public class Application {
                         memoryRequest = "modi";
                     }};;
                     jobSpecific = new WayScript.airbyte_test.models.shared.JobTypeResourceLimit[]{{
-                        add(new JobTypeResourceLimit(JobTypeEnum.RESET_CONNECTION,                 new ResourceRequirements() {{
+                        add(new JobTypeResourceLimit(JobType.RESET_CONNECTION,                 new ResourceRequirements() {{
                                             cpuLimit = "possimus";
                                             cpuRequest = "voluptate";
                                             memoryLimit = "consectetur";
                                             memoryRequest = "nesciunt";
                                         }};) {{
-                            jobType = JobTypeEnum.GET_SPEC;
+                            jobType = JobType.GET_SPEC;
                             resourceRequirements = new ResourceRequirements() {{
                                 cpuLimit = "eveniet";
                                 cpuRequest = "odio";

@@ -30,14 +30,14 @@ public class CheckConnectionRead {
     }
     
     @JsonProperty("status")
-    public CheckConnectionReadStatusEnum status;
+    public CheckConnectionReadStatus status;
 
-    public CheckConnectionRead withStatus(CheckConnectionReadStatusEnum status) {
+    public CheckConnectionRead withStatus(CheckConnectionReadStatus status) {
         this.status = status;
         return this;
     }
     
-    public CheckConnectionRead(@JsonProperty("jobInfo") SynchronousJobRead jobInfo, @JsonProperty("status") CheckConnectionReadStatusEnum status) {
+    public CheckConnectionRead(@JsonProperty("jobInfo") SynchronousJobRead jobInfo, @JsonProperty("status") CheckConnectionReadStatus status) {
         this.jobInfo = jobInfo;
         this.status = status;
   }

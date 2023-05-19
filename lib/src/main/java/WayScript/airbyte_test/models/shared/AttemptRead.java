@@ -62,9 +62,9 @@ public class AttemptRead {
     }
     
     @JsonProperty("status")
-    public AttemptStatusEnum status;
+    public AttemptStatus status;
 
-    public AttemptRead withStatus(AttemptStatusEnum status) {
+    public AttemptRead withStatus(AttemptStatus status) {
         this.status = status;
         return this;
     }
@@ -95,7 +95,7 @@ public class AttemptRead {
         return this;
     }
     
-    public AttemptRead(@JsonProperty("createdAt") Long createdAt, @JsonProperty("id") Long id, @JsonProperty("status") AttemptStatusEnum status, @JsonProperty("updatedAt") Long updatedAt) {
+    public AttemptRead(@JsonProperty("createdAt") Long createdAt, @JsonProperty("id") Long id, @JsonProperty("status") AttemptStatus status, @JsonProperty("updatedAt") Long updatedAt) {
         this.createdAt = createdAt;
         this.id = id;
         this.status = status;

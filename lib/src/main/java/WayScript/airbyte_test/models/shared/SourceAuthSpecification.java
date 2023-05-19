@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class SourceAuthSpecification {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("auth_type")
-    public SourceAuthSpecificationAuthTypeEnum authType;
+    public SourceAuthSpecificationAuthType authType;
 
-    public SourceAuthSpecification withAuthType(SourceAuthSpecificationAuthTypeEnum authType) {
+    public SourceAuthSpecification withAuthType(SourceAuthSpecificationAuthType authType) {
         this.authType = authType;
         return this;
     }

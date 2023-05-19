@@ -50,9 +50,9 @@ public class FieldTransform {
     }
     
     @JsonProperty("transformType")
-    public FieldTransformTransformTypeEnum transformType;
+    public FieldTransformTransformType transformType;
 
-    public FieldTransform withTransformType(FieldTransformTransformTypeEnum transformType) {
+    public FieldTransform withTransformType(FieldTransformTransformType transformType) {
         this.transformType = transformType;
         return this;
     }
@@ -66,7 +66,7 @@ public class FieldTransform {
         return this;
     }
     
-    public FieldTransform(@JsonProperty("breaking") Boolean breaking, @JsonProperty("fieldName") String[] fieldName, @JsonProperty("transformType") FieldTransformTransformTypeEnum transformType) {
+    public FieldTransform(@JsonProperty("breaking") Boolean breaking, @JsonProperty("fieldName") String[] fieldName, @JsonProperty("transformType") FieldTransformTransformType transformType) {
         this.breaking = breaking;
         this.fieldName = fieldName;
         this.transformType = transformType;

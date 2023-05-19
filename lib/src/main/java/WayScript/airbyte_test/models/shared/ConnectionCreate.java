@@ -19,9 +19,9 @@ public class ConnectionCreate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("geography")
-    public GeographyEnum geography;
+    public Geography geography;
 
-    public ConnectionCreate withGeography(GeographyEnum geography) {
+    public ConnectionCreate withGeography(Geography geography) {
         this.geography = geography;
         return this;
     }
@@ -43,9 +43,9 @@ public class ConnectionCreate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("namespaceDefinition")
-    public NamespaceDefinitionTypeEnum namespaceDefinition;
+    public NamespaceDefinitionType namespaceDefinition;
 
-    public ConnectionCreate withNamespaceDefinition(NamespaceDefinitionTypeEnum namespaceDefinition) {
+    public ConnectionCreate withNamespaceDefinition(NamespaceDefinitionType namespaceDefinition) {
         this.namespaceDefinition = namespaceDefinition;
         return this;
     }
@@ -64,9 +64,9 @@ public class ConnectionCreate {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("nonBreakingChangesPreference")
-    public NonBreakingChangesPreferenceEnum nonBreakingChangesPreference;
+    public NonBreakingChangesPreference nonBreakingChangesPreference;
 
-    public ConnectionCreate withNonBreakingChangesPreference(NonBreakingChangesPreferenceEnum nonBreakingChangesPreference) {
+    public ConnectionCreate withNonBreakingChangesPreference(NonBreakingChangesPreference nonBreakingChangesPreference) {
         this.nonBreakingChangesPreference = nonBreakingChangesPreference;
         return this;
     }
@@ -142,9 +142,9 @@ public class ConnectionCreate {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("scheduleType")
-    public ConnectionScheduleTypeEnum scheduleType;
+    public ConnectionScheduleType scheduleType;
 
-    public ConnectionCreate withScheduleType(ConnectionScheduleTypeEnum scheduleType) {
+    public ConnectionCreate withScheduleType(ConnectionScheduleType scheduleType) {
         this.scheduleType = scheduleType;
         return this;
     }
@@ -170,9 +170,9 @@ public class ConnectionCreate {
      * Active means that data is flowing through the connection. Inactive means it is not. Deprecated means the connection is off and cannot be re-activated. the schema field describes the elements of the schema that will be synced.
      */
     @JsonProperty("status")
-    public ConnectionStatusEnum status;
+    public ConnectionStatus status;
 
-    public ConnectionCreate withStatus(ConnectionStatusEnum status) {
+    public ConnectionCreate withStatus(ConnectionStatus status) {
         this.status = status;
         return this;
     }
@@ -189,7 +189,7 @@ public class ConnectionCreate {
         return this;
     }
     
-    public ConnectionCreate(@JsonProperty("destinationId") String destinationId, @JsonProperty("sourceId") String sourceId, @JsonProperty("status") ConnectionStatusEnum status) {
+    public ConnectionCreate(@JsonProperty("destinationId") String destinationId, @JsonProperty("sourceId") String sourceId, @JsonProperty("status") ConnectionStatus status) {
         this.destinationId = destinationId;
         this.sourceId = sourceId;
         this.status = status;

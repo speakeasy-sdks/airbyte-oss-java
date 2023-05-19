@@ -101,9 +101,9 @@ public class DestinationDefinitionRead {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("releaseStage")
-    public ReleaseStageEnum releaseStage;
+    public ReleaseStage releaseStage;
 
-    public DestinationDefinitionRead withReleaseStage(ReleaseStageEnum releaseStage) {
+    public DestinationDefinitionRead withReleaseStage(ReleaseStage releaseStage) {
         this.releaseStage = releaseStage;
         return this;
     }
