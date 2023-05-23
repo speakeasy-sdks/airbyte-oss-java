@@ -6,7 +6,7 @@
 ### Gradle
 
 ```groovy
-implementation 'WayScript.airbyte_test:airbyte-test:1.5.0'
+implementation 'WayScript.airbyte_test:airbyte-test:1.6.0'
 ```
 <!-- End SDK Installation -->
 

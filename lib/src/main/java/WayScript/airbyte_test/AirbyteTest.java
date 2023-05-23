@@ -103,8 +103,8 @@ public class AirbyteTest {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.5.0";
-	private String _genVersion = "2.31.0";
+	private String _sdkVersion = "1.6.0";
+	private String _genVersion = "2.32.2";
 	/**
 	 * The Builder class allows the configuration of a new instance of the SDK.
 	 */
