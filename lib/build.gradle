@@ -41,7 +41,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'WayScript'
             artifactId = 'airbyte-test'
-            version = '1.7.0'
+            version = '1.7.1'
 
             from components.java
 
