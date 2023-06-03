@@ -14,20 +14,10 @@ import java.nio.charset.StandardCharsets;
 
 public class Jobs {
 	
-	private HTTPClient _defaultClient;
-	private HTTPClient _securityClient;
-	private String _serverUrl;
-	private String _language;
-	private String _sdkVersion;
-	private String _genVersion;
+	private SDKConfiguration sdkConfiguration;
 
-	public Jobs(HTTPClient defaultClient, HTTPClient securityClient, String serverUrl, String language, String sdkVersion, String genVersion) {
-		this._defaultClient = defaultClient;
-		this._securityClient = securityClient;
-		this._serverUrl = serverUrl;
-		this._language = language;
-		this._sdkVersion = sdkVersion;
-		this._genVersion = genVersion;
+	public Jobs(SDKConfiguration sdkConfiguration) {
+		this.sdkConfiguration = sdkConfiguration;
 	}
 
     /**
@@ -37,7 +27,7 @@ public class Jobs {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.CancelJobResponse cancelJob(WayScript.airbyte_test.models.shared.JobIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/cancel");
         
         HTTPRequest req = new HTTPRequest();
@@ -50,9 +40,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -96,7 +86,7 @@ public class Jobs {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.GetAttemptNormalizationStatusesForJobResponse getAttemptNormalizationStatusesForJob(WayScript.airbyte_test.models.shared.JobIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/get_normalization_status");
         
         HTTPRequest req = new HTTPRequest();
@@ -106,9 +96,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -136,7 +126,7 @@ public class Jobs {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.GetJobDebugInfoResponse getJobDebugInfo(WayScript.airbyte_test.models.shared.JobIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/get_debug_info");
         
         HTTPRequest req = new HTTPRequest();
@@ -149,9 +139,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -195,7 +185,7 @@ public class Jobs {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.GetJobInfoResponse getJobInfo(WayScript.airbyte_test.models.shared.JobIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/get");
         
         HTTPRequest req = new HTTPRequest();
@@ -208,9 +198,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -254,7 +244,7 @@ public class Jobs {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.GetJobInfoLightResponse getJobInfoLight(WayScript.airbyte_test.models.shared.JobIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/get_light");
         
         HTTPRequest req = new HTTPRequest();
@@ -267,9 +257,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -307,7 +297,7 @@ public class Jobs {
     }
 
     public WayScript.airbyte_test.models.operations.GetLastReplicationJobResponse getLastReplicationJob(WayScript.airbyte_test.models.shared.ConnectionIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/get_last_replication_job");
         
         HTTPRequest req = new HTTPRequest();
@@ -320,9 +310,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -366,7 +356,7 @@ public class Jobs {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.ListJobsForResponse listJobsFor(WayScript.airbyte_test.models.shared.JobListRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/jobs/list");
         
         HTTPRequest req = new HTTPRequest();
@@ -379,9 +369,9 @@ public class Jobs {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");

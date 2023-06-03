@@ -17,20 +17,10 @@ import java.nio.charset.StandardCharsets;
  */
 public class Connection {
 	
-	private HTTPClient _defaultClient;
-	private HTTPClient _securityClient;
-	private String _serverUrl;
-	private String _language;
-	private String _sdkVersion;
-	private String _genVersion;
+	private SDKConfiguration sdkConfiguration;
 
-	public Connection(HTTPClient defaultClient, HTTPClient securityClient, String serverUrl, String language, String sdkVersion, String genVersion) {
-		this._defaultClient = defaultClient;
-		this._securityClient = securityClient;
-		this._serverUrl = serverUrl;
-		this._language = language;
-		this._sdkVersion = sdkVersion;
-		this._genVersion = genVersion;
+	public Connection(SDKConfiguration sdkConfiguration) {
+		this.sdkConfiguration = sdkConfiguration;
 	}
 
     /**
@@ -40,7 +30,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.CreateConnectionResponse createConnection(WayScript.airbyte_test.models.shared.ConnectionCreate request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/create");
         
         HTTPRequest req = new HTTPRequest();
@@ -53,9 +43,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -91,7 +81,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.DeleteConnectionResponse deleteConnection(WayScript.airbyte_test.models.shared.ConnectionIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/delete");
         
         HTTPRequest req = new HTTPRequest();
@@ -104,9 +94,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -144,7 +134,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.GetConnectionResponse getConnection(WayScript.airbyte_test.models.shared.ConnectionIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/get");
         
         HTTPRequest req = new HTTPRequest();
@@ -157,9 +147,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -204,7 +194,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.ListAllConnectionsForWorkspaceResponse listAllConnectionsForWorkspace(WayScript.airbyte_test.models.shared.WorkspaceIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/list_all");
         
         HTTPRequest req = new HTTPRequest();
@@ -217,9 +207,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -264,7 +254,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.ListConnectionsForWorkspaceResponse listConnectionsForWorkspace(WayScript.airbyte_test.models.shared.WorkspaceIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/list");
         
         HTTPRequest req = new HTTPRequest();
@@ -277,9 +267,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -323,7 +313,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.ResetConnectionResponse resetConnection(WayScript.airbyte_test.models.shared.ConnectionIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/reset");
         
         HTTPRequest req = new HTTPRequest();
@@ -336,9 +326,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -382,7 +372,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.SearchConnectionsResponse searchConnections(WayScript.airbyte_test.models.shared.ConnectionSearch request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/search");
         
         HTTPRequest req = new HTTPRequest();
@@ -395,9 +385,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -433,7 +423,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.SyncConnectionResponse syncConnection(WayScript.airbyte_test.models.shared.ConnectionIdRequestBody request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/sync");
         
         HTTPRequest req = new HTTPRequest();
@@ -446,9 +436,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0.7, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -497,7 +487,7 @@ public class Connection {
      * @throws Exception if the API call fails
      */
     public WayScript.airbyte_test.models.operations.UpdateConnectionResponse updateConnection(WayScript.airbyte_test.models.shared.ConnectionUpdate request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = WayScript.airbyte_test.utils.Utils.generateURL(baseUrl, "/v1/connections/update");
         
         HTTPRequest req = new HTTPRequest();
@@ -510,9 +500,9 @@ public class Connection {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json;q=1, application/json;q=0");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");

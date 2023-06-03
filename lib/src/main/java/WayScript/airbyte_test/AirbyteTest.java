@@ -98,21 +98,13 @@ public class AirbyteTest {
      */
     public Workspace workspace;	
 
-	private HTTPClient _defaultClient;
-	private HTTPClient _securityClient;
-	
-	private String _serverUrl;
-	private String _language = "java";
-	private String _sdkVersion = "1.7.1";
-	private String _genVersion = "2.34.7";
+	private SDKConfiguration sdkConfiguration;
+
 	/**
 	 * The Builder class allows the configuration of a new instance of the SDK.
 	 */
 	public static class Builder {
-		private HTTPClient client;
-		
-		private String serverUrl;
-		private java.util.Map<String, String> params = new java.util.HashMap<String, String>();
+		private SDKConfiguration sdkConfiguration = new SDKConfiguration();
 
 		private Builder() {
 		}
@@ -123,7 +115,7 @@ public class AirbyteTest {
 		 * @return The builder instance.
 		 */
 		public Builder setClient(HTTPClient client) {
-			this.client = client;
+			this.sdkConfiguration.defaultClient = client;
 			return this;
 		}
 		
@@ -133,7 +125,7 @@ public class AirbyteTest {
 		 * @return The builder instance.
 		 */
 		public Builder setServerURL(String serverUrl) {
-			this.serverUrl = serverUrl;
+			this.sdkConfiguration.serverUrl = serverUrl;
 			return this;
 		}
 		
@@ -144,8 +136,18 @@ public class AirbyteTest {
 		 * @return The builder instance.
 		 */
 		public Builder setServerURL(String serverUrl, java.util.Map<String, String> params) {
-			this.serverUrl = serverUrl;
-			this.params = params;
+			this.sdkConfiguration.serverUrl = WayScript.airbyte_test.utils.Utils.templateUrl(serverUrl, params);
+			return this;
+		}
+		
+		/**
+		 * Allows the overriding of the default server by index
+		 * @param serverIdx The server to use for all requests.
+		 * @return The builder instance.
+		 */
+		public Builder setServerIndex(int serverIdx) {
+			this.sdkConfiguration.serverIdx = serverIdx;
+			this.sdkConfiguration.serverUrl = SERVERS[serverIdx];
 			return this;
 		}
 		
@@ -155,7 +157,24 @@ public class AirbyteTest {
 		 * @throws Exception Thrown if the SDK could not be built.
 		 */
 		public AirbyteTest build() throws Exception {
-			return new AirbyteTest(this.client, this.serverUrl, this.params);
+			if (this.sdkConfiguration.defaultClient == null) {
+				this.sdkConfiguration.defaultClient = new SpeakeasyHTTPClient();
+			}
+			
+			if (this.sdkConfiguration.securityClient == null) {
+				this.sdkConfiguration.securityClient = this.sdkConfiguration.defaultClient;
+			}
+			
+			if (this.sdkConfiguration.serverUrl == null || this.sdkConfiguration.serverUrl.isBlank()) {
+				this.sdkConfiguration.serverUrl = SERVERS[0];
+				this.sdkConfiguration.serverIdx = 0;
+			}
+
+			if (this.sdkConfiguration.serverUrl.endsWith("/")) {
+				this.sdkConfiguration.serverUrl = this.sdkConfiguration.serverUrl.substring(0, this.sdkConfiguration.serverUrl.length() - 1);
+			}
+			
+			return new AirbyteTest(this.sdkConfiguration);
 		}
 	}
 
@@ -167,218 +186,49 @@ public class AirbyteTest {
 		return new Builder();
 	}
 
-	private AirbyteTest(HTTPClient client, String serverUrl, java.util.Map<String, String> params) throws Exception {
-		this._defaultClient = client;
+	private AirbyteTest(SDKConfiguration sdkConfiguration) throws Exception {
+		this.sdkConfiguration = sdkConfiguration;
 		
-		if (this._defaultClient == null) {
-			this._defaultClient = new SpeakeasyHTTPClient();
-		}
+		this.attempt = new Attempt(this.sdkConfiguration);
 		
-		if (this._securityClient == null) {
-			this._securityClient = this._defaultClient;
-		}
-
-		if (serverUrl != null && !serverUrl.isBlank()) {
-			this._serverUrl = WayScript.airbyte_test.utils.Utils.templateUrl(serverUrl, params);
-		}
+		this.connection = new Connection(this.sdkConfiguration);
 		
-		if (this._serverUrl == null) {
-			this._serverUrl = SERVERS[0];
-		}
-
-		if (this._serverUrl.endsWith("/")) {
-            this._serverUrl = this._serverUrl.substring(0, this._serverUrl.length() - 1);
-        }
-
+		this.destination = new Destination(this.sdkConfiguration);
 		
+		this.destinationDefinition = new DestinationDefinition(this.sdkConfiguration);
 		
-		this.attempt = new Attempt(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.destinationDefinitionSpecification = new DestinationDefinitionSpecification(this.sdkConfiguration);
 		
-		this.connection = new Connection(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.destinationOauth = new DestinationOauth(this.sdkConfiguration);
 		
-		this.destination = new Destination(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.health = new Health(this.sdkConfiguration);
 		
-		this.destinationDefinition = new DestinationDefinition(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.internal = new Internal(this.sdkConfiguration);
 		
-		this.destinationDefinitionSpecification = new DestinationDefinitionSpecification(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.jobs = new Jobs(this.sdkConfiguration);
 		
-		this.destinationOauth = new DestinationOauth(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.logs = new Logs(this.sdkConfiguration);
 		
-		this.health = new Health(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.notifications = new Notifications(this.sdkConfiguration);
 		
-		this.internal = new Internal(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.openapi = new Openapi(this.sdkConfiguration);
 		
-		this.jobs = new Jobs(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.operation = new Operation(this.sdkConfiguration);
 		
-		this.logs = new Logs(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.scheduler = new Scheduler(this.sdkConfiguration);
 		
-		this.notifications = new Notifications(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.source = new Source(this.sdkConfiguration);
 		
-		this.openapi = new Openapi(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.sourceDefinition = new SourceDefinition(this.sdkConfiguration);
 		
-		this.operation = new Operation(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.sourceDefinitionSpecification = new SourceDefinitionSpecification(this.sdkConfiguration);
 		
-		this.scheduler = new Scheduler(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.sourceOauth = new SourceOauth(this.sdkConfiguration);
 		
-		this.source = new Source(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.state = new State(this.sdkConfiguration);
 		
-		this.sourceDefinition = new SourceDefinition(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.webBackend = new WebBackend(this.sdkConfiguration);
 		
-		this.sourceDefinitionSpecification = new SourceDefinitionSpecification(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
-		
-		this.sourceOauth = new SourceOauth(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
-		
-		this.state = new State(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
-		
-		this.webBackend = new WebBackend(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
-		
-		this.workspace = new Workspace(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.workspace = new Workspace(this.sdkConfiguration);
 	}
 }
