@@ -2,7 +2,7 @@
 
 ## Overview
 
-Airbyte Configuration API
+Airbyte Configuration API: Airbyte Configuration API
 [https://airbyte.io](https://airbyte.io).
 
 This API is a collection of HTTP RPC-style methods. While it is not a REST API, those familiar with REST should find the conventions of this API recognizable.
