@@ -19,9 +19,9 @@ public class StreamState {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("streamState")
-    public java.util.Map<String, Object> streamState;
+    public StateBlob streamState;
 
-    public StreamState withStreamState(java.util.Map<String, Object> streamState) {
+    public StreamState withStreamState(StateBlob streamState) {
         this.streamState = streamState;
         return this;
     }

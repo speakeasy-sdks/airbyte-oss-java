@@ -1,0 +1,14 @@
+# JobDebugRead
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `airbyteVersion`                                                              | *String*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `configId`                                                                    | *String*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `configType`                                                                  | [JobConfigType](../../models/shared/JobConfigType.md)                         | :heavy_check_mark:                                                            | N/A                                                                           |
+| `destinationDefinition`                                                       | [DestinationDefinitionRead](../../models/shared/DestinationDefinitionRead.md) | :heavy_check_mark:                                                            | N/A                                                                           |
+| `id`                                                                          | *Long*                                                                        | :heavy_check_mark:                                                            | N/A                                                                           |
+| `sourceDefinition`                                                            | [SourceDefinitionRead](../../models/shared/SourceDefinitionRead.md)           | :heavy_check_mark:                                                            | N/A                                                                           |
+| `status`                                                                      | [JobStatus](../../models/shared/JobStatus.md)                                 | :heavy_check_mark:                                                            | N/A                                                                           |

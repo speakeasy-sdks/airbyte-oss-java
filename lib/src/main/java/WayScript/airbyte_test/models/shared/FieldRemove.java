@@ -14,9 +14,9 @@ public class FieldRemove {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("schema")
-    public java.util.Map<String, Object> schema;
+    public FieldSchema schema;
 
-    public FieldRemove withSchema(java.util.Map<String, Object> schema) {
+    public FieldRemove withSchema(FieldSchema schema) {
         this.schema = schema;
         return this;
     }

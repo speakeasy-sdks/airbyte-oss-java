@@ -1,0 +1,16 @@
+# DestinationDefinitionSpecificationRead
+
+Successful operation
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `advancedAuth`                                                                         | [AdvancedAuth](../../models/shared/AdvancedAuth.md)                                    | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `authSpecification`                                                                    | [DestinationAuthSpecification](../../models/shared/DestinationAuthSpecification.md)    | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `connectionSpecification`                                                              | *Object*                                                                               | :heavy_minus_sign:                                                                     | The specification for what values are required to configure the destinationDefinition. |
+| `destinationDefinitionId`                                                              | *String*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `documentationUrl`                                                                     | *String*                                                                               | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `jobInfo`                                                                              | [SynchronousJobRead](../../models/shared/SynchronousJobRead.md)                        | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `supportedDestinationSyncModes`                                                        | List<[DestinationSyncMode](../../models/shared/DestinationSyncMode.md)>                | :heavy_minus_sign:                                                                     | N/A                                                                                    |

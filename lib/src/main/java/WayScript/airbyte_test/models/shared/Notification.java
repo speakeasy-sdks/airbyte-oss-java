@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Notification {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("customerioConfiguration")
-    public java.util.Map<String, Object> customerioConfiguration;
+    public CustomerioNotificationConfiguration customerioConfiguration;
 
-    public Notification withCustomerioConfiguration(java.util.Map<String, Object> customerioConfiguration) {
+    public Notification withCustomerioConfiguration(CustomerioNotificationConfiguration customerioConfiguration) {
         this.customerioConfiguration = customerioConfiguration;
         return this;
     }

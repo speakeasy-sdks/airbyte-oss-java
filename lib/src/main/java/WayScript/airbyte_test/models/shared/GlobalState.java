@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class GlobalState {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("shared_state")
-    public java.util.Map<String, Object> sharedState;
+    public StateBlob sharedState;
 
-    public GlobalState withSharedState(java.util.Map<String, Object> sharedState) {
+    public GlobalState withSharedState(StateBlob sharedState) {
         this.sharedState = sharedState;
         return this;
     }

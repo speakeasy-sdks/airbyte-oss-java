@@ -35,9 +35,9 @@ public class SourceDefinitionSpecificationRead {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("connectionSpecification")
-    public java.util.Map<String, Object> connectionSpecification;
+    public SourceDefinitionSpecification connectionSpecification;
 
-    public SourceDefinitionSpecificationRead withConnectionSpecification(java.util.Map<String, Object> connectionSpecification) {
+    public SourceDefinitionSpecificationRead withConnectionSpecification(SourceDefinitionSpecification connectionSpecification) {
         this.connectionSpecification = connectionSpecification;
         return this;
     }

@@ -1,0 +1,12 @@
+# OperatorWebhook
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `dbtCloud`                                                                      | [OperatorWebhookDbtCloud](../../models/shared/OperatorWebhookDbtCloud.md)       | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `executionBody`                                                                 | *String*                                                                        | :heavy_minus_sign:                                                              | DEPRECATED. Populate dbtCloud instead.                                          |
+| `executionUrl`                                                                  | *String*                                                                        | :heavy_minus_sign:                                                              | DEPRECATED. Populate dbtCloud instead.                                          |
+| `webhookConfigId`                                                               | *String*                                                                        | :heavy_minus_sign:                                                              | The id of the webhook configs to use from the workspace.                        |
+| `webhookType`                                                                   | [OperatorWebhookWebhookType](../../models/shared/OperatorWebhookWebhookType.md) | :heavy_minus_sign:                                                              | N/A                                                                             |

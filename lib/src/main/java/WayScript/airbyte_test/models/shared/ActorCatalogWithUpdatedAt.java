@@ -14,9 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ActorCatalogWithUpdatedAt {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("catalog")
-    public java.util.Map<String, Object> catalog;
+    public ActorCatalogWithUpdatedAtCatalog catalog;
 
-    public ActorCatalogWithUpdatedAt withCatalog(java.util.Map<String, Object> catalog) {
+    public ActorCatalogWithUpdatedAt withCatalog(ActorCatalogWithUpdatedAtCatalog catalog) {
         this.catalog = catalog;
         return this;
     }

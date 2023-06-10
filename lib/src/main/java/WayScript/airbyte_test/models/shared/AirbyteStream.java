@@ -29,9 +29,9 @@ public class AirbyteStream {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("jsonSchema")
-    public java.util.Map<String, Object> jsonSchema;
+    public StreamJsonSchema jsonSchema;
 
-    public AirbyteStream withJsonSchema(java.util.Map<String, Object> jsonSchema) {
+    public AirbyteStream withJsonSchema(StreamJsonSchema jsonSchema) {
         this.jsonSchema = jsonSchema;
         return this;
     }

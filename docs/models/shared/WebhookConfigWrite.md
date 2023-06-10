@@ -1,0 +1,10 @@
+# WebhookConfigWrite
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `authToken`                                                                                         | *String*                                                                                            | :heavy_minus_sign:                                                                                  | an auth token, to be passed as the value for an HTTP Authorization header.                          |
+| `name`                                                                                              | *String*                                                                                            | :heavy_minus_sign:                                                                                  | human readable name for this webhook e.g. for UI display.                                           |
+| `validationUrl`                                                                                     | *String*                                                                                            | :heavy_minus_sign:                                                                                  | if supplied, the webhook config will be validated by checking that this URL returns a 2xx response. |

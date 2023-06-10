@@ -31,9 +31,9 @@ public class ConnectionState {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("state")
-    public java.util.Map<String, Object> state;
+    public StateBlob state;
 
-    public ConnectionState withState(java.util.Map<String, Object> state) {
+    public ConnectionState withState(StateBlob state) {
         this.state = state;
         return this;
     }

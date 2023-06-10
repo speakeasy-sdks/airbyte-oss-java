@@ -11,9 +11,9 @@ public class FieldSchemaUpdate {
      * JSONSchema representation of the field
      */
     @JsonProperty("newSchema")
-    public java.util.Map<String, Object> newSchema;
+    public FieldSchema newSchema;
 
-    public FieldSchemaUpdate withNewSchema(java.util.Map<String, Object> newSchema) {
+    public FieldSchemaUpdate withNewSchema(FieldSchema newSchema) {
         this.newSchema = newSchema;
         return this;
     }
@@ -22,14 +22,14 @@ public class FieldSchemaUpdate {
      * JSONSchema representation of the field
      */
     @JsonProperty("oldSchema")
-    public java.util.Map<String, Object> oldSchema;
+    public FieldSchema oldSchema;
 
-    public FieldSchemaUpdate withOldSchema(java.util.Map<String, Object> oldSchema) {
+    public FieldSchemaUpdate withOldSchema(FieldSchema oldSchema) {
         this.oldSchema = oldSchema;
         return this;
     }
     
-    public FieldSchemaUpdate(@JsonProperty("newSchema") java.util.Map<String, Object> newSchema, @JsonProperty("oldSchema") java.util.Map<String, Object> oldSchema) {
+    public FieldSchemaUpdate(@JsonProperty("newSchema") FieldSchema newSchema, @JsonProperty("oldSchema") FieldSchema oldSchema) {
         this.newSchema = newSchema;
         this.oldSchema = oldSchema;
   }
